@@ -1,0 +1,90 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge Standard Operations Template\\
+\vspace{1cm}
+\Large For Tests, Internal SOPs, or Competition Procedures}
+
+
+\begin{document}
+
+
+
+\input{common/standard_titlepage}
+
+\section{Big Title at the Start of the Document}
+
+% begin operators declarations -- {{{
+% syntax for operator macro:
+% arg1: their name (so here you use \auth to insert the AUTHOR name)
+% arg2: the color you want them highlighted in
+% arg3: their abbreviated title (what you should use in the checklists)
+% arg4: their full title (insert into document with arg1 + full, so for auth
+%       it'd be "\authfull" to insert their full title). Use this in Personnel
+%       Required subsection, and in Sign Off subsection.
+\operator{auth}{blue}{AUTHOR}{Person Writing a Procedure}
+\operator{edi}{red}{EDITOR}{People Editing the Procedure}
+\operator{perf}{olive}{PERFORMER}{Person Performing the Procedure}
+% end operators declarations -- }}}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following:
+\begin{itemize}
+    \item A section about what people you'll need to perform this boilerplate procedure
+    \item A section on how to modify this latex file to create a new procedure document
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin personnel required section -- {{{
+\subsection{Personnel Required}
+The test operations team consists of seven personnel:
+\begin{checklist}
+    \item The \authfull{} writes a new procedure
+    \item The \edifull{} reads this new procedure and approves it before it is used
+    \item The \perffull{} Performs the actions laid out in the new procedure
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end personnel required section -- }}}
+
+% begin sign off -- {{{
+\subsection{Sign-Off}
+\textit{To be completed by all test personnel after reading and familiarization with procedures}
+\begin{checklist}
+    \item \authfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \edifull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \perffull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end sign off -- }}}
+
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Items to be completed before beginning procedure
+    \begin{checklist}
+        \item Make sure the \auth{} has a computer they can compile \LaTeX{} on, or has access to a website that can do so
+        \item Make sure the \edi{} has been asked to review a new procedure (or do this after, I'm not a cop, do what you want)
+        \item Make sure caffeine is available
+    \end{checklist}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+\newpage
+% begin first checklist-- {{{
+\subsection{How to Make a New Procedure}
+\begin{checklist}
+    \item \auth{} Copy this file (standard\_template.tex) to a new latex file (extension .tex)
+    \item \auth{} Change the Document Title and Section title (which will appear at the top of the first page).
+    \item \auth{} Create the operators that you'll need for your procedure (use the \\operators macro, it's super helpful)
+    \item \auth{} Add those operators to the Personnel Required and Sign-Off sections
+    \item \auth{} Write your checklists (if you use multiple checklists, make sure to call \\setcounter\{checklistnum\}\{0\} after each to reset the line number).
+    \item \auth{} Send to \edi{} for review
+    \item \edi{} Edit the document. Compile it, commit it, whatever. Send to \perf{} so they can do the thing.
+    \item \perf{} Do the thing in the procedure.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end first checklist -- }}}
+
+\end{document}

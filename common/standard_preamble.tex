@@ -1,0 +1,52 @@
+\documentclass[letter]{article}
+
+%% margins and fonts
+\usepackage[margin=1in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+
+% begin package imports -- {{{
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tabto}
+\usepackage{titling}
+\usepackage[iso,german]{isodate}
+% end package imports -- }}}
+
+% begin set section title styles -- {{{
+\usepackage{titlesec}
+\titleformat{\section} {\normalfont\Large\bfseries}{}{0em}{}[{\titlerule[0.8pt]}]
+\titleformat{\subsection} {\normalfont\large}{}{0em}{}[{\titlerule[0.6pt]}]
+% end set section title styles -- }}}
+
+% begin checklist symbols definition -- {{{
+\usepackage{enumitem,amssymb}
+\newcounter{checklistnum}
+\setcounter{checklistnum}{0}
+\DeclareRobustCommand{\checklistnumber}{\refstepcounter{checklistnum}\thechecklistnum}
+\newlist{checklist}{itemize}{3}
+\setlist[checklist,1]{
+label={\color{gray}\checklistnumber}\hspace{2em}$\square$,
+leftmargin=0em,
+itemindent=2em
+}
+\setlist[checklist,2]{
+label={\color{gray}\checklistnumber}\hspace{4em}$\square$,
+leftmargin=0em,
+itemindent=4em
+}
+\setlist[checklist,3]{
+label={\color{gray}\checklistnumber}\hspace{6em}$\square$,
+leftmargin=0em,
+itemindent=6em
+}
+% end checklist symbols definition -- }}}
+
+% begin personnel macro -- {{{
+\newcommand{\operator}[4]{%
+  \expandafter\newcommand\csname #1\endcsname{{\color{#2}\textbf{#3}}\phantom{}}
+  \expandafter\newcommand\csname #1full\endcsname{{\color{#2}\textbf{#4 [#3]}}\phantom{}}
+}
+% end personnel macro -- }}}
+
+\pagenumbering{gobble}
