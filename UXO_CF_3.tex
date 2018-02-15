@@ -1,0 +1,319 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge UXO Hybrid Rocket Engine\\
+Cold Flow 3\\
+\vspace{1cm}
+\Large Cold Flow Test Operations Procedures}
+
+%begin operators definitions -- {{{
+\operator{ops}{Blue}{OPS}{Operations Director}
+\operator{primary}{Fuchsia}{PRIMARY}{Primary Fill Operator}
+\operator{secondary}{Emerald}{SECONDARY}{Secondary Fill Operator}
+\operator{daq}{OliveGreen}{DAQ}{DAQ Technician}
+\operator{heat}{orange}{HEAT}{Heating Technician}
+\operator{peri}{red}{P1}{Perimeter Guard 1}
+\operator{perii}{red}{P2}{Perimeter Guard 2}
+%end operators definitions -- }}}}}
+
+\begin{document}
+\input{common/standard_titlepage}
+
+\section{Cold Flow Test Operations Procedures}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following procedures:
+\begin{itemize}
+    \item The \textit{Cold Flow Test - Remote Control} procedure comprises steps for operating the fill system using the electrical control system and motorized ball valves.
+    \item The \textit{Cold Flow Test - Manual Control} procedure comprises steps for operating the fill system using manual ball valves.
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin personnel required section -- {{{
+\subsection{Personnel Required}
+The test operations team consists of seven personnel:
+\begin{checklist}
+    \item The \opsfull{} directs operations procedures and communicates with the other test personnel.
+    \item The \primaryfull{} is the main system operator. \primary{} operates all manual valves as well as the test control system.
+    \item The \secondaryfull{} is the backup for \primary{}, and communicates with OPS. If \primary{} becomes incapacitated, \secondary{} is responsible for removing them from danger.
+    \item The \daqfull{} monitors and operates the test data acquisition system.
+    \item The \heatfull{} operates the valves for the tank heating system.
+    \item \perifull{} and \periifull{} ensure that no unauthorized personnel enter the testing area during test operations.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end personnel required section -- }}}
+
+% begin sign off -- {{{
+\subsection{Sign-Off}
+\textit{To be completed by all test personnel after reading and familiarization with procedures}
+\begin{checklist}
+    \item \opsfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \primaryfull  \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \secondaryfull\tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \daqfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \heatfull     \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \perifull     \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \periifull    \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end sign off -- }}}
+
+\newpage
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Ensure that the following procedures are complete:
+    \begin{checklist}
+        \item Oxidizer Tank Assembly procedure
+        \item Plumbing Setup procedure
+        \item Oxidizer Tank Stand Setup procedure
+        \item Tank Heating Setup procedure
+        \item Test Stand Setup procedure
+        \item Data Acquisition Setup procedure
+        \item Test Control System Setup procedure
+    \end{checklist}
+    \item Ensure that all technicians as defined above are available and have completed the sign-off.
+    \item Ensure that the following personnel have walkie-talkies and communication is functional:
+    \begin{checklist}
+        \item \ops{}
+        \item \primary{}
+        \item \secondary{}
+        \item \daq{}
+        \item \heat{}
+        \item \peri{}
+        \item \perii{}
+    \end{checklist}
+    \item Ensure that all spectators and test personnel are wearing safety glasses.
+    \item Ensure that \primary{} and \secondary{} are wearing face shields and have no exposed skin.
+    \item Ensure that \primary{} is wearing thermal gloves.
+    \item Ensure that \secondary{} is in possession of the system control key.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+\newpage
+% begin Remote Control Procedure section -- {{{
+\subsection{Cold Flow Test - Remote Control Procedure}
+\begin{checklist}
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+        \item Cylinder Valve
+        \item Remote Fill Valve
+        \item Parallel Fill Valve
+        \item Tank Vent Valve
+        \item Pressure Relief Valve
+        \item Line Vent Valve
+        \item Injector Valve
+    \end{checklist}
+    \item \primary{}: Confirm that the following valves are initially open:
+    \begin{checklist}
+        \item Series Fill Valve
+    \end{checklist}
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \daq{}: Confirm that all load cells are reading the determined zero point.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \peri{} and \perii{}: Close the perimeter and do not allow any further personnel to enter the testing area.
+    \item \secondary: Confirm that no personnel are present in the testing area other than \primary{} and \secondary.
+    \item \primary{}: Remove the cap from the carbon dioxide supply cylinder.
+    \item \primary{}: Connect the fill line to the supply cylinder, hand tighten, and then tighten with a wrench. Do not force the connection.
+    \item \primary{}: Slowly open the Cylinder Valve through $\frac{3}{4}$  of a turn.
+    \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed:
+        \begin{checklist}
+            \item \primary{}: Close the Cylinder Valve.
+            \item \primary{}: Open the Injector Valve.
+            \item \primary{}: Slowly open the Parallel Fill Valve.
+            \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
+            \item \ops{}: Abort test procedures and revisit plumbing setup.
+        \end{checklist}
+    \end{checklist}
+    \item \primary{}: Communicate the supply cylinder pressure as visible on the Pressure Gauge.
+    \item \daq{}: Communicate the supply cylinder pressure as read by the Fill Pressure Transducer.
+    \item \daq{}: Confirm that the two pressure measurements are in agreement.
+    \item \primary{} and \secondary: Retreat to the test control area, behind the blast shield.
+    \item \primary{}: Perform the following control system checks:
+    \begin{checklist}
+        \item Confirm that all actuator controls are in the ``off'' position:
+        \begin{checklist}
+            \item Remote Fill Valve
+            \item Tank Vent Valve
+            \item Injector Valve
+        \end{checklist}
+    \end{checklist}
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \ops{}: Poll the following personnel for GO/NO GO status:
+    \begin{checklist}
+        \item \peri{}
+        \item \perii{}
+        \item \heat
+        \item \daq{}
+        \item \primary{}
+        \item \secondary
+    \end{checklist}
+    \item \secondary: Give the system control key to \primary{}.
+    \item \primary{}: Engage the key switch and power on the control boxes.
+    \item \primary{}: Open the Tank Vent Valve.
+    \item \primary{}: Open the Remote Fill Valve.
+    \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed:
+        \begin{checklist}
+            \item \primary{}: Close the Remote Fill Valve.
+            \item \primary{}: Open the Injector Valve.
+            \item \secondary: Proceed only when the oxidizer tank has fully vented.
+            \item \primary{} and \secondary: Approach the test plumbing.
+            \item \primary{}: Close the Cylinder Valve.
+            \item \primary{}: Open the Remote Fill Valve.
+            \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
+            \item \ops{}: Abort test procedures and revisit plumbing setup.
+        \end{checklist}
+        \item If the Remote Fill Valve fails to open:
+        \begin{checklist}
+            \item \ops{}: Proceed to the Manual Control procedure.
+        \end{checklist}
+    \end{checklist}
+    \item \secondary{}: Proceed only when a white plume is visible from the Tank Vent Valve.
+    \item \primary{}: Close the Tank Vent Valve.
+    \item \primary{}: Close the Remote Fill Valve.
+    \begin{checklist}[label=$\bullet$]
+        \item If the Remote Fill Valve fails to close:
+        \begin{checklist}
+            \item \primary{} and \secondary: Approach the test plumbing.
+            \item \primary{}: Close the Series Fill Valve.
+            \item \primary{} and \secondary: Retreat to the test control area, behind the blast shield.
+        \end{checklist}
+    \end{checklist}
+    \item \heat: Open the Tank Heating Valve.
+    \item \daq{}: Proceed only when the oxidizer tank pressure is at least 750 psi.
+    \begin{checklist}[label=$\bullet$]
+        \item If the oxidizer tank pressure does not reach 750 psi:
+        \begin{checklist}
+            \item \heat: Close the Tank Heating Valve.
+            \item \primary{}: Open the Injector Valve.
+            \item \secondary: Proceed only when the oxidizer tank has fully vented.
+            \item \primary{} and \secondary: Approach the test plumbing.
+            \item \primary{}: Close the Cylinder Valve.
+            \item \primary{}: Open the Remote Fill Valve.
+            \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
+            \item \ops{}: Abort test procedures and revisit plumbing setup.
+        \end{checklist}
+    \end{checklist}
+    \item \heat: Close the Tank Heating Valve.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \primary{}: Conduct the cold flow test by opening the Injector Valve.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \ops{}: Wait for at least 3 minutes before proceeding.
+    \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
+    \item \primary{}: Open the Tank Vent Valve.
+    \item \primary{} and \secondary: Approach the test plumbing.
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Open the Remote Fill Valve.
+    \item \primary{}: Disconnect the fill line from the supply cylinder.
+    \item \primary{}: Replace the cap on the carbon dioxide supply cylinder.
+    \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
+    \item \ops{}: Wait for at least 3 minutes before proceeding.
+    \item \peri{} and \perii{}: Open the perimeter.
+    \item \ops{}: Proceed with teardown and disassembly.
+
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end Remote Control Procedure section -- }}}
+
+\newpage
+    
+% begin Manual Control Procedure section -- {{{
+\subsection{Cold Flow Test - Manual Control Procedure}
+\begin{checklist}
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+        \item Cylinder Valve
+        \item Remote Fill Valve
+        \item Parallel Fill Valve
+        \item Pressure Relief Valve
+        \item Line Vent Valve
+        \item Shutoff Valve
+        \item Series Fill Valve
+    \end{checklist}
+    \item \primary{}: Confirm that the following valves are initially open:
+    \item Tank Vent Valve
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \daq{}: Confirm that all load cells are reading the determined zero point.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \peri{} and \perii{}: Close the perimeter and do not allow any further personnel to enter the testing area.
+    \item \secondary: Confirm that no personnel are present in the testing area other than \primary{} and \secondary.
+    \item \primary{}: Remove the cap from the carbon dioxide supply cylinder.
+    \item \primary{}: Connect the fill line to the supply cylinder, hand tighten, and then tighten with a wrench. Do not force the connection.
+    \item \primary{}: Slowly open the Cylinder Valve through $\frac{3}{4}$ of a turn.
+    \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed:
+        \begin{checklist}
+            \item \primary{}: Close the Cylinder Valve.
+            \item \primary{}: Open the Shutoff Valve using the ropes.
+            \item \primary{}: Slowly open the Parallel Fill Valve.
+            \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
+            \item \ops{}: Abort test procedures and revisit plumbing setup.
+        \end{checklist}
+    \end{checklist}
+    \item \primary{}: Communicate the supply cylinder pressure as visible on the Pressure Gauge.
+    \item \daq{}: Communicate the supply cylinder pressure as read by the Fill Pressure Transducer.
+    \item \daq{}: Confirm that the two pressure measurements are in agreement.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \ops{}: Poll the following personnel for GO/NO GO status:
+    \begin{checklist}
+        \item \peri{}
+        \item \perii{}
+        \item \heat
+        \item \daq{}
+        \item \primary{}
+        \item \secondary
+    \end{checklist}
+    \item \primary{}: Open the Series Fill Valve.
+    \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed:
+        \begin{checklist}
+            \item \primary{}: Close the Series Fill Valve.
+            \item \primary{}: Open the Shutoff Valve using the ropes.
+            \item \secondary: Proceed only when the oxidizer tank has fully vented.
+            \item \primary{}: Close the Cylinder Valve.
+            \item \primary{}: Open the Remote Fill Valve.
+            \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
+            \item \ops{}: Abort test procedures and revisit plumbing setup.
+        \end{checklist}
+    \end{checklist}
+    \item \secondary{}: Proceed only when a white plume is visible from the Tank Vent Valve.
+    \item \heat: Open the Tank Heating Valve.
+    \item \daq{}: Proceed only when the oxidizer tank pressure is at least 750 psi.
+    \begin{checklist}[label=$\bullet$]
+        \item If the oxidizer tank pressure does not reach 750 psi:
+        \begin{checklist}
+            \item \heat: Close the Tank Heating Valve.
+            \item \primary{}: Open the Shutoff Valve using the ropes.
+            \item \secondary: Proceed only when the oxidizer tank has fully vented.
+            \item \primary{} and \secondary: Approach the test plumbing.
+            \item \primary{}: Close the Cylinder Valve.
+            \item \primary{}: Slowly open the Series Fill Valve.
+            \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
+            \item \ops{}: Abort test procedures and revisit plumbing setup.
+        \end{checklist}
+    \end{checklist}
+    \item \heat: Close the Tank Heating Valve.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \primary{}: Conduct the cold flow test by opening the Shutoff Valve using the ropes.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \ops{}: Wait for at least 3 minutes before proceeding.
+    \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
+    \item \primary{}: Open the Tank Vent Valve.
+    \item \primary{} and \secondary: Approach the test plumbing.
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Slowly open the Series Fill Valve.
+    \item \primary{}: Disconnect the fill line from the supply cylinder.
+    \item \primary{}: Replace the cap on the carbon dioxide supply cylinder.
+    \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
+    \item \ops{}: Wait for at least 3 minutes before proceeding.
+    \item \peri{} and \perii{}: Open the perimeter.
+    \item \ops{}: Proceed with teardown and disassembly.
+
+\end{checklist}
+% end Manual Control Procedure section -- }}}
+
+\end{document}
