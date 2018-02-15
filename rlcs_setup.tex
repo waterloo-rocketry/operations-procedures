@@ -1,0 +1,237 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge Remote Launch Control System Setup\\
+\vspace{1cm}
+\Large For UXO CF3 and SF1}
+
+
+\begin{document}
+
+
+
+\input{common/standard_titlepage}
+
+\section{Remote Launch Control System Setup Procedure}
+
+% begin operators declarations (for buttons) -- {{{
+\operator{priarm}{red}{Primary Ignition Arm}{Primary Arm Missile Switch}
+\operator{secarm}{red}{Secondary Ignition Arm}{Secondary Arm Missile Switch}
+\operator{fire}{red}{Fire}{Big Red Fire Button}
+\operator{inj}{orange}{Injector}{Injector Valve Missile Switch}
+\operator{rfill}{Green}{Fill}{Remote Fill Missile Switch}
+\operator{rvent}{blue}{Tank Vent}{Remote Tank Vent Missile Switch}
+% end operators declarations (for buttons) -- }}}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following:
+\begin{itemize}
+    \item Indoor Setup and checks
+    \item Outside Setup
+    \item Outside System Checks
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin required items section -- {{{
+\subsection{Required Items}
+Things you'll need to perform this procedure
+\begin{checklist}
+    \item Client Side Box (yellow pelican case)
+    \item Tower Side Box (silver briefcase thing)
+    \item Three (3) Lithium Polymer 12V ignition batteries
+    \item Multimeter
+    \item Electrically actuated valve for inside setup
+    \item Phillips head screwdriver
+\end{checklist}
+% end required items section -- }}}
+
+
+% begin Inside Setup section -- {{{
+\subsection{Inside Setup}
+Do what you can inside to keep yourself from frostbite as much as possible.
+\begin{checklist}
+    \item Put two LiPo batteries in tower side box, in the white 3d printed 
+battery holders.
+    \item Make sure the actuator switch is off (big black one with a 1 and 0
+painted on it), clicked to "0".
+    \item Plug in both batteries. Lights on arduino should light up, relays
+should click.
+    \item Wire electric valve into the relay board labelled RFV (remote fill 
+valve):
+    \begin{checklist}
+        \item Blue wire screwed into V1
+        \item Red wire screwed into V2
+        \item White wire screwed into G1
+        \item Black wire screwed into G2
+        \item Make sure no wire strands are poking out of screw terminal
+    \end{checklist}
+    \item Turn on actuator switch:
+    \begin{checklist}
+        \item If remote valve previously wasn't closed, it should now close. If 
+not, go to troubleshooting guide.
+    \end{checklist}
+    \item Put battery in client side box. It plugs into the deans connector
+underneath the cutout, and isn't secured to anything (to be fixed).
+    \item Turn on client side box (flip power switch).
+    \begin{checklist}
+        \item Confirm that LCD lights up.
+    \end{checklist}
+    \item Turn keyswitch 90 degrees clockwise.
+    \begin{checklist}
+        \item Confirm that missile switches light up.
+    \end{checklist}
+    \item Flip \rfill{} missile switch
+    \begin{checklist}
+        \item Confirm that Electrically actuated valve turns to open
+    \end{checklist}
+
+    \item Confirm that there is no voltage from V1 to G1 on ignition relay board
+    \item Confirm that there is no voltage from V2 to G2 on ignition relay board
+    \item Flip \priarm{} missile switch and depress fire button
+    \begin{checklist}
+        \item Confirm that there is 12V from V1 to G1 on ignition relay board
+        \item Confirm that there is no voltage from V2 to G2 on ignition relay board
+    \end{checklist}
+    \item Have that person unflip \priarm{} switch and flip \secarm{} switch, 
+and depress fire button
+    \begin{checklist}
+        \item Confirm that there is no voltage from V1 to G1 on ignition relay board
+        \item Confirm that there is 12V from V2 to G2 on ignition relay board.
+    \end{checklist}
+
+    \item Disconnect electrically actuated valve from RFV relay board
+
+End inside checks
+
+\end{checklist}
+% end Inside Setup section -- }}}
+
+% begin Outside Setup section -- {{{
+\subsection{Outside setup}
+\begin{checklist}
+    \item Find a good spot to put the tower side box. Put the tower side box there
+    \item Connect remote fill valve to relay board labelled RFV:
+    \begin{checklist}
+        \item Blue wire to V1
+        \item Red wire to V2
+        \item White wire to G1
+        \item Black wire to G2
+        \item Make sure no wire strands are poking out of screw terminal
+    \end{checklist}
+    \item Connect tank vent valve to relay board labelled RVV:
+    \begin{checklist}
+        \item Blue wire to V1
+        \item Red wire to V2
+        \item White wire to G1
+        \item Black wire to G2
+        \item Make sure no wire strands are poking out of screw terminal
+    \end{checklist}
+    \item Connect injector valve to relay board labelled IJV:
+    \begin{checklist}
+        \item Blue wire to V1
+        \item Red wire to V2
+        \item White wire to G1
+        \item Black wire to G2
+        \item Make sure no wire strands are poking out of screw terminal
+    \end{checklist}
+    \item Ensure that ignition transmission cables are not connected to the rocket
+    \item Connect ignition transmission cables to relay board labelled IGN:
+    \begin{checklist}
+        \item Primary coil wires to V1 and G1 (polarity is irrelevant)
+        \item Secondary coil wires to V2 and G2 (polarity is irrelevant)
+        \item Make sure no wire strands are poking out of screw terminal
+    \end{checklist}
+    \item Perform "Outside Tests" Procedure
+    \item Disconnect both LiPos in tower side box to conserve power
+    \item Turn off client side box to conserve power
+\end{checklist}
+End of setup procedure
+% end Outside Setup section -- }}}
+
+% begin Outside checks section -- {{{
+\subsection{Outside Checks}
+Perform during outside setup procedure and again immediately before test
+\begin{checklist}
+    \item Turn on client side box (Ensure LCD lights up)
+    \item Turn key switch (Ensure missile switches light up)
+    \item Turn on tower side box actuator switch
+    \item Confirm that all three electrically actuated valves are closed
+    \item Flip \rfill{} missile switch
+    \begin{checklist}
+        \item Confirm that remote fill valve opened
+    \end{checklist}
+    \item Un-flip \rfill{} switch
+    \begin{checklist}
+        \item Confirm that remote fill valve closed
+    \end{checklist}
+
+    \item Flip \rvent{} missile switch
+    \begin{checklist}
+        \item Confirm that remote vent valve opened
+    \end{checklist}
+    \item Un-flip \rvent{} switch
+    \begin{checklist}
+        \item Confirm that remote vent valve closed
+    \end{checklist}
+
+    \item Flip \inj{} missile switch
+    \begin{checklist}
+        \item Confirm that injector valve opened
+    \end{checklist}
+    \item Un-flip \inj{} switch
+    \begin{checklist}
+        \item Confirm that injector valve closed
+    \end{checklist}
+\end{checklist}
+The remainder of these checks are for the ignition system. They are 
+unnecesary for cold flow test. This would be the end of checks for the 
+cold flow procedure.
+\begin{checklist}
+    \item Approach ignition leads (female quick connect side)
+    \item Confirm that the ignition leads are not connected to the rocket.
+    \item Probe for voltage across primary leads
+    \begin{checklist}
+        \item Confirm that multimeter reads 0 volts
+    \end{checklist}
+    \item Flip \priarm{} missile switch
+    \begin{checklist}
+        \item Confirm that reading is still 0 volts
+    \end{checklist}
+    \item Press \fire{} button
+    \begin{checklist}
+        \item Confirm that multimeter now reads 12 volts
+    \end{checklist}
+    \item Release \fire{} button
+    \begin{checklist}
+        \item Confirm that multimeter now reads 0 volts
+    \end{checklist}
+    \item Un-flip \priarm{} missile switch
+
+    \item Probe for voltage across secondary leads
+    \begin{checklist}
+        \item Confirm that multimeter reads 0 volts
+    \end{checklist}
+    \item Flip \secarm{} missile switch
+    \begin{checklist}
+        \item Confirm that reading is still 0 volts
+    \end{checklist}
+    \item Press \fire{} button
+    \begin{checklist}
+        \item Confirm that multimeter now reads 12 volts
+    \end{checklist}
+    \item Release \fire{} button
+    \begin{checklist}
+        \item Confirm that multimeter now reads 0 volts
+    \end{checklist}
+    \item Un-flip \secarm{} missile switch
+
+    \item Un-flip all missile switches
+    \item Turn off client side box
+\end{checklist}
+End of Checks procedure
+% end Outside checks section -- }}}
+
+
+
+\end{document}
