@@ -1,0 +1,99 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge Deployable Payload Separation Test 1\\
+\vspace{1cm}
+\Large March 17, 2018}
+
+
+\begin{document}
+
+
+
+\input{common/standard_titlepage}
+
+\section{Separation Test Procedures}
+
+% begin operators declarations -- {{{
+% syntax for operator macro:
+% arg1: their name (so here you use \auth to insert the AUTHOR name)
+% arg2: the color you want them highlighted in
+% arg3: their abbreviated title (what you should use in the checklists)
+% arg4: their full title (insert into document with arg1 + full, so for auth
+%       it'd be "\authfull" to insert their full title). Use this in Personnel
+%       Required subsection, and in Sign Off subsection.
+\operator{auth}{blue}{OPERATOR}{Any person assisting with the test}
+% end operators declarations -- }}}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following:
+\begin{itemize}
+    \item The procedure for testing the separation mechanism of the deployable payload
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin personnel required section -- {{{
+\subsection{Personnel Required}
+The procedure has no set roles, and as such all members participating in the test will be referred to as \auth
+
+% end personnel required section -- }}}
+
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Items to be completed before beginning procedure
+    \begin{checklist}
+        \item Connect up the cubesat rigging
+        \item Make sure you have a clear table and workspace with no nearby people
+	\item Make sure you have a deployment charge prepared according to the corresponding SOP
+        \item Make sure the batteries are disconnected from the stratologger and arduino, and no wires are connected to the MAIN or DROGUE terminals of the stratologger
+    \end{checklist}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+\newpage
+% begin first checklist-- {{{
+\subsection{Test Procedure}
+\begin{checklist}
+    \item \auth{} Lay the nose cone on the table with the tip pointed away from any personnel. Ensure that during the entire procedure the area in front and behind the nose cone always remains clear. Treat the system as armed for the entire procedure
+    \item \auth{} Lay the cubesat on its side on the table behind the nose cone
+    \item \auth{} Remove the 8 screws holding the cubesat side plate in place and set aside
+    \item \auth{} Ensure that the batteries are disconnected from the stratologger and arduino
+    \item \auth{} Grab one of the pre-assembled CO2 charges and zip-tie it to the Nylon tape, roughly 1 foot above the eyebolt of the cubesat
+    \item \auth{} Run the charge wire through the hole on the top of the cubesat and connect to the stratologger screw terminal marked DROGUE
+    \item \auth{} Connect the arduino and stratologger battery. At this point you have 15 minutes until the stratologger is armed
+\item \auth{} If the stratologger begins the arming procedure (Buzzer goes off) there are about 20 seconds before the stratologger is armed
+\begin{checklist}
+    \item {} Immedietly stop all work and step away from the table
+    \item {} Make sure the area in front and behind the nose cone assembly are clear
+    \item {} Wait 10 minutes for the arduino to automatically disarm the stratologger
+    \item {} Once the buzzer stops disconnect the battery from the stratologger and arduino
+    \item {} Restart the procedure
+\end{checklist}
+    \item \auth{} Replace the removed panel from the cubesat and fasten the 8 screws
+    \item \auth{} Place the parachute in the nose cone
+    \item \auth{} Place the rigging in the nose cone
+    \item \auth{} Slide the cubesat into the nose cone, ensuring that the rigging is not interfering with the cubesat
+    \item \auth{} Place the recovery top coupler over the bottom of the nose cone assembly
+    \item \auth{} Attach the 3 shear pins that connect the recovery coupler to the nose cone assembly
+    \item \auth{} Take the combustion chamber thrust mount and lay it horizontal
+    \item \auth{} Place the nose cone in the thrust mount, ensure that the recovery top coupler is in the mount clamp
+    \item \auth{} Tighten the mount clamp such that it only grips the recovery top coupler
+    \item \auth{} Connect the vacuum pump hose to the hole in the base of the recovery top coupler
+    \item \auth{} Stand back, ensuring that the area in front and behind the assembly is clear
+    \item \auth{} Turn on the cameras filming the test
+    \item \auth{} Wait for the arming procedure to begin and complete, when ready you should hear a beep once per second indicating good drogue continuity
+    \item \auth{} Turn the vacuum pump on for 5 seconds
+    \item \auth{} Shut off and wait for deployment event
+    \item \auth{} Wait for the buzzer to stop, indicating that the system is no longer armed
+    \item \auth{} Separate the cubesat from the nose cone
+    \item \auth{} Remove the cubesat side panel
+    \item \auth{} Disconnect the stratologger and arduino batteries
+    \item \auth{} Proceed with disassembly
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end first checklist -- }}}
+
+\end{document}
