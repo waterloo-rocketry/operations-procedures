@@ -1,0 +1,112 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge Standard Operations Template\\
+\vspace{1cm}
+\Large For Tests, Internal SOPs, or Competition Procedures}
+
+
+\begin{document}
+
+
+
+\input{common/standard_titlepage}
+
+\section{Big Title at the Start of the Document}
+
+% begin operators declarations -- {{{
+% syntax for operator macro:
+% arg1: their name (so here you use \auth to insert the AUTHOR name)
+% arg2: the color you want them highlighted in
+% arg3: their abbreviated title (what you should use in the checklists)
+% arg4: their full title (insert into document with arg1 + full, so for auth
+%       it'd be "\authfull" to insert their full title). Use this in Personnel
+%       Required subsection, and in Sign Off subsection.
+% end operators declarations -- }}}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following:
+\begin{itemize}
+    \item Guide to integrate cubesat into rocket before launch
+    \item Guide to operate cubesat before and during launch
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Items to be completed before beginning procedure
+    \begin{checklist}
+        \item Make sure the deployment charge is disconnected from the cubesat
+	\item Make sure the batteries are all fully charged
+	\item Make sure you have all the required tools for assembly
+	\item Make sure you have the payload screw storage container available
+    \end{checklist}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+\newpage
+% begin first checklist-- {{{
+\subsection{Assembly and integration procedure}
+\begin{checklist}
+    \item Place the cubesat with the +X panel upwards
+    \item Remove the screws from the panel. Place the screws in their slots in the screw container
+    \item Remove the +X panel
+    \item Place the cubesat with the +Y panel facing upwards and remove the screws holding it in place.
+	\item Remove the +Y panel
+	\item Remove the 4 screws holding the gopro mount in place and set aside
+	\item Hold the power button down for 3 seconds to turn on the gopro
+	\item Ensure the gopro is fully charged and has an SD card inserted
+	\item Press the power button until the settings icon is shown on the display
+	\item Use the record button to select the wireless icon
+	\item Press the power button until the "REM CTRL" option is highlighted
+	\item Press the record button to select it
+	\item Press the record button again to select "EXISTING"
+	\item Confirm that the operation was succful by observing the blue blinking LED on the front of the camera
+	\item Press the power button on the gopro wireless remote control to turn it on
+	\item Ensure the devices are communicating by recording a short test video using the remote
+	\item hold the power button on the remote until it powers down, and ensure that the camera also powered down
+	\item Install the camera into the gopro mount and screw into place
+	\item Connect the USB cable from the rechargable battery to the camera
+	\item Reinstall the +Y panel
+	\item Turn the cubesat so the +X panel is facing upwards again
+	\item Connect the 2 blue batteries into ports J5 and J7 on the recovery board
+	\item Turn on the payload transponder and verify that it can connect to the cubesat
+	\item Use the transponder to turn the cubesat to "ACTIVE MODE" and ensure that the sensor data being read out is logical
+	\item Use the transponder to turn the cubesat back to "LOW POWER MODE"
+	\item Turn the transponder off
+	\item reinstall the +X panel
+	\item remove the +Z panel
+	\item install a 9v battery into the stratologger battery holder  
+	\item turn on the transponder
+	\item Use the transponder to turn the cubesat to "ARMED MODE" and verify that the stratologger turns on
+	\item Use the transponder to turn the cubesat back to "LOW POWER MODE"
+	\item Turn off the transponder
+	\item Take a prepared deployment charge assembly and zip tie it to the parachute line, ensuring that a piece of fireproof cloth is wrapped around the assembly
+	\item Pass the wires of the deployment charge through the hole in the +Z panel and connect to the stratologger terminal labelled "DROGUE" 
+	\item Reinstall the +Z panel
+	\item Load the cubesat into the payload sleeve
+	\item Attach the sleeve to the rest of the rocket
+	\item Attach the 3 shear pins 
+	\item End of procedure
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end first checklist -- }}}
+
+\newpage
+% begin first checklist-- {{{
+\subsection{Launch preparation procedure}
+\begin{checklist}
+    	\item Turn on the transponder
+	\item Ensure that the transponder is connected to the cubesat
+	\item Switch the cubesat to "ARMED MODE"
+	\item Press the power button on the GoPro remote
+	\item Press record on the remote to start the camera recording
+	\item End of procedure
+
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end first checklist -- }}}
+\end{document}
