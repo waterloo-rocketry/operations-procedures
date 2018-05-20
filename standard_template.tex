@@ -86,12 +86,17 @@ The test operations team consists of seven personnel:
 \newpage
 % begin first checklist-- {{{
 \subsection{How to Make a New Procedure}
+% syntax for the flag macro:
+% arg1: The colour you want the flag to be
+% this should be useful for abort procedures that we need to put sticky notes on for irec judges to happy for
+% It prints the flag all the way over the right edge so the flag should be visible even in the middle of a stack of ops
+\flag{blue}
 \begin{checklist}
     \item \auth{} Copy this file (standard\_template.tex) to a new latex file (extension .tex)
     \item \auth{} Change the Document Title and Section title (which will appear at the top of the first page).
     \item \auth{} Create the operators that you'll need for your procedure (use the \\operators macro, it's super helpful)
     \item \auth{} Add those operators to the Personnel Required and Sign-Off sections
-    \item \auth{} Write your checklists (if you use multiple checklists, make sure to call \\setcounter\{checklistnum\}\{0\} after each to reset the line number).
+    \item \auth{} Write your checklists (this part is important, which is why there's a big red square on the right margin, so you can put one of those sticky note things there and flip to it easily). \flag{red}
     \item \auth{} Send to \edi{} for review
     \item \edi{} Edit the document. Compile it, commit it, whatever. Send to \perf{} so they can do the thing.
     \item \perf{} Do the thing in the procedure.
