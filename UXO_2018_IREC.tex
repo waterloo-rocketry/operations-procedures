@@ -79,15 +79,7 @@ The launch operations team consists of four personnel:
         \item \secondary{}
     \end{checklist}
     \item Ensure that \ops{} is in possession of the system control key.
-    \item Ensure that the locations of Launch Control, Launch Tower, and the Minimum Safe Distance are clearly defined:
-    
-    \begin{center}
-    \begin{tabular}{|l|c|r|}
-    \hline{}
-    Launch Control&Launch Tower&Minimum Safe Distance\\ \hline{}
-    & & \\ \hline{}
-    \end{tabular}
-    \end{center}
+    \item Ensure that the locations of Launch Control, Launch Tower, and the Minimum Safe Distance are clearly defined.
     
 \end{checklist}
 \setcounter{checklistnum}{0}
@@ -97,6 +89,55 @@ The launch operations team consists of four personnel:
 \subsection{Nominal Procedure}
 \begin{checklist}
     \item \primary{}: Confirm that the following valves are initially closed:
+        \begin{checklist}
+        \item Cylinder Valve
+        \item Remote Fill Valve
+        \item Parallel Fill Valve
+        \item Series Fill Valve
+        \item Line Vent Valve
+        \item Parallel Vent Valve
+    \end{checklist}
+    \item \primary{}: Confirm that the ignition connectors are disconnected from the rocket.
+    \item \control{} and \secondary: Confirm that all actuators fail to move while the system control key is removed:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Tank Vent Valve
+        \item Injector Valve
+    \end{checklist}
+    \item \secondary: Confirm that the voltage across the ignition connectors is 0 V.
+    \item \ops: Give the system control key to \control{}.
+    \item \control: Confirm that all actuator controls are in the off state:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Tank Vent Valve
+        \item Primary Ignition
+        \item Secondary Ignition
+        \item Injector Valve
+    \end{checklist}
+    \item \control{}: Engage the key switch and enable actuators.
+    \item \control{} and \secondary: Confirm that all actuators actuate as intended:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Tank Vent Valve
+        \item Injector Valve
+    \end{checklist}
+    \item \control{} and \secondary: Confirm that the ignition voltage is 12 V when the ignition button is fired:
+    \begin{checklist}
+        \item Primary Ignition
+        \item Secondary Ignition
+    \end{checklist}
+    \item \control: Confirm that all DAQ readings are displaying appropriately.
+    \item \control: Remove the system control key and give it to \ops.
+    \item \primary: Arm the payload using the transponder.
+    \item \primary: Arm recovery avionics using the magnetic switches
+    \item \primary: Arm remote disconnect by connecting the springs, fill adapter, and strap.
+    \item \primary: Connect the ignition connectors to the rocket.
 \end{checklist}
 \setcounter{checklistnum}{0}
 % end Fill System Check section -- }}}
