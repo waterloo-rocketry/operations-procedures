@@ -79,7 +79,7 @@ The launch operations team consists of four personnel:
         \item \secondary{}
     \end{checklist}
     \item Ensure that \ops{} is in possession of the system control key.
-    \item Ensure that the client side RLCS box is turned off.
+    \item Ensure that the client-side RLCS box is powered off.
     \item Ensure that the locations of Launch Control, Launch Tower, and the Minimum Safe Distance are clearly defined.
     
 \end{checklist}
@@ -108,8 +108,8 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \item Parallel Vent Valve
     \end{checklist}
     \item \primary{}: Confirm that the ignition connectors are disconnected from the rocket.
-    \item \control{}: Turn on the client side RLCS box.
-    \item \control{} and \secondary: Confirm that all actuators fail to move:
+    \item \control{}: Power on the client-side RLCS box.
+    \item \control{} and \secondary: Confirm that the following actuators fail to move:
     \begin{checklist}
         \item Remote Fill Valve
         \item Line Vent Valve
@@ -208,24 +208,24 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \begin{checklist}
             \item \ops{}: Proceed to procedure \textbf{A2}.
         \end{checklist}
-        \item If the supply line pressure exceeds 1050 psi:
+        \item If the supply line pressure exceeds 1000 psi:
         \begin{checklist}
             \item \ops{}: Proceed to procedure \textbf{A3}.
         \end{checklist}
     \end{checklist}
-    \item \control: Confirm that the supply line pressure as read by \primary{} agrees with the supply line pressure measured by the DAQ system.
+    \item \control: Confirm that the supply line pressure as read by \primary{} agrees with the supply line pressure [P1] measured by the DAQ system.
     \item \ops{}: Record the resting rocket dry mass and supply pressure:
 
     \begin{tabu} to \textwidth { |[1pt]X[c]|[1pt]X[c]|[1pt] }
     \tabucline[1pt]{}
-    Dry Mass (lbs) & Supply Pressure (psi) \\
+    [M] Dry Mass (lbs) & [P1] Supply Pressure (psi) \\
     \tabucline[1pt]{}
     \vspace{1in} & \\
     \tabucline[1pt]{}
     \end{tabu}
 
     \item \primary: Open the Series Fill Valve.
-    \item \primary{} and \secondary{}: Retreat 100ft away from rocket.
+    \item \primary{} and \secondary{}: Retreat 100 ft from the fill system.
     \item \ops{}: Give the system control key to \control{}.
     \item \control{}: Confirm the following valves are closed:
     \begin{checklist}
@@ -233,13 +233,21 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \item Remote Vent Valve
         \item Tank Vent Valve
     \end{checklist}
-    \item \control{}: Use control key to arm client side box.
+    \item \control{}: Engage the key switch and enable actuators.
     \item \control{}: Open the Remote Fill Valve.
-    \item \control{}: Confirm that the pressures in the fill lines and in the oxidizer tank are increasing.
+    \item \control{}: Confirm the following pressures are increasing:
+    \begin{checklist}
+        \item {[P2]} Fill line pressure
+        \item {[P3]} Oxidizer tank pressure
+    \end{checklist}
     \item \control{}: Close the Remote Fill Valve.
-    \item \control{}: Confirm that the pressures in the fill lines and in the oxidizer tank are stable.
+    \item \control{}: Confirm the following pressures are stable:
+    \begin{checklist}
+        \item {[P2]} Fill line pressure
+        \item {[P3]} Oxidizer tank pressure
+    \end{checklist}
     \begin{checklist}[label=$\bullet$]
-        \item If the pressures are decreasing (probable leak detected):
+        \item If the pressures are decreasing:
         \begin{checklist}
             \item \ops{}: Proceed to procedure \textbf{A4}.
         \end{checklist}
@@ -248,8 +256,8 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \control{}: Open the Tank Vent Valve.
     \item \control{}: Confirm the following pressures are atmospheric:
     \begin{checklist}
-        \item P2: Fill line pressure
-        \item P3: Rocket Tank pressure
+        \item {[P2]} Fill line pressure
+        \item {[P3]} Oxidizer tank pressure
     \end{checklist}
     \item \control{}: Disengage the key switch and disable actuators
     \item \primary{} and \secondary{}: Retreat to the Minimum Safe Distance.
@@ -271,8 +279,8 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \control{}: Monitor the RLCS display for rocket mass and oxidizer tank pressure.
     \item \ops{}: Proceed only when the following is true:
     \begin{checklist}
-        \item Rocket mass plateaus
-        \item Oxidizer tank pressure is within the acceptable limits
+        \item Rocket mass [M] plateaus
+        \item Oxidizer tank pressure [P3] is within the acceptable limits
     \end{checklist}
     \item \control{}: Close the Tank Vent Valve.
     \item \control{}: Close the Remote Fill Valve.
@@ -335,8 +343,8 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \ops: Give the master key to \control{}
     \item \control{}: Engage the key switch and enable actuators.
     \item \control{}: Open the Remote Fill Valve.
-    \item \control{}: Confirm that the supply line pressure is atmospheric.
-    \item \primary{}: Disconnect the fill line from the supply cylinder.
+    \item \control{}: Confirm that the supply line pressure [P1] is atmospheric.
+    \item \primary{}: Disconnect the supply line from the supply cylinder.
     \item \primary{}: Replace the cap on the nitrous oxide supply cylinder.
     \item \ops{}: Proceed with teardown and disassembly.
 \end{checklist}
@@ -352,7 +360,11 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \primary{}: Close the Cylinder Valve.
     \item \primary{}: Slowly open the Parallel Vent Valve.
     \item \primary{}: Slowly open the Parallel Fill Valve.
-    \item \control{}: Confirm that the fill and supply pressures are atmospheric.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
     \item \primary{}: Disarm the system:
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
@@ -373,7 +385,11 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \primary{}: Close the Cylinder Valve.
     \item \primary{}: Slowly open the Parallel Vent Valve.
     \item \primary{}: Slowly open the Parallel Fill Valve.
-    \item \control{}: Confirm that the fill and supply pressures are atmospheric.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
     \item \primary{}: Allow the supply cylinder to warm up.
     \item \ops{}: Revisit \textbf{N1}.
 \end{checklist}
@@ -386,7 +402,11 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \primary{}: Close the Cylinder Valve.
     \item \primary{}: Slowly open the Parallel Vent Valve.
     \item \primary{}: Slowly open the Parallel Fill Valve.
-    \item \control{}: Confirm that the fill and supply pressures are atmospheric.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
     \item \primary{}: Disarm the system:
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
@@ -416,7 +436,11 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \primary{}: Close the Cylinder Valve.
     \item \primary{}: Slowly open the Parallel Vent Valve.
     \item \primary{}: Slowly open the Parallel Fill Valve.
-    \item \control{}: Confirm that the fill and supply pressures are atmospheric.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
     \item \primary{}: Disarm the system:
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
@@ -439,7 +463,7 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \ops{}: Proceed only when the following is true:
     \begin{checklist}
         \item Rocket mass is equal to the pre-launch recorded mass
-        \item Oxidizer tank pressure is atmospheric
+        \item Oxidizer tank pressure [P3] is atmospheric
         \item The Launch Control Officer has given clearance to approach the Launch Tower.
     \end{checklist}
     \item \primary{} and \secondary: Approach the Launch Tower.
@@ -450,7 +474,11 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \ops: Give the system control key to \control{}
     \item \control{}: Engage the system control switch and enable actuators.
     \item \control{}: Open the Remote Fill Valve.
-    \item \control{}: Confirm that the supply line pressure is atmospheric.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
     \item \primary{}: Disarm the system:
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
