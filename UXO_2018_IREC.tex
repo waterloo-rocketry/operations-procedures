@@ -205,20 +205,37 @@ The launch operations team consists of four personnel:
         \end{checklist}
     \end{checklist}
     \item \control: Confirm that the supply line pressure as read by \primary{} agrees with the supply line pressure measured by the DAQ system.
-    \item \primary: Slowly open the Parallel Fill Valve.
+    \item \primary: Open the Series Fill Valve.
+    \item \primary{} and \secondary{}: Retreat 100ft away from rocket.
+    \item \ops{}: Give the system control key to \control{}.
+    \item \control{}: Confirm the following valves are closed:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Remote Vent Valve
+        \item Tank Vent Valve
+    \end{checklist}
+    \item \control{}: Use control key to arm client side box.
+    \item \control{}: Open the Remote Fill Valve.
+    \item \control{}: Confirm that the pressures in the fill lines and in the oxidizer tank are increasing.
+    \item \control{}: Close the Remote Fill Valve.
+    \item \control{}: Confirm that the pressures in the fill lines and in the oxidizer tank are stable.
     \begin{checklist}[label=$\bullet$]
-        \item If leaks are observed:
+        \item If the pressures are decreasing (probable leak detected):
         \begin{checklist}
             \item \ops{}: Proceed to procedure \textbf{A4}.
         \end{checklist}
     \end{checklist}
-    \item \control: Confirm that the pressures in the fill lines and in the oxidizer tank are increasing.
-    \item \primary: Close the Parallel Fill Valve.
-    \item \primary: Open the Series Fill Valve.
-    \item \primary{} and \secondary {}: Retreat to the Minimum Safe Distance.
+    \item \control{}: Open the Remote Vent Valve.
+    \item \control{}: Open the Tank Vent Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item P2: Fill line pressure
+        \item P3: Rocket Tank pressure
+    \end{checklist}
+    \item \control{}: Disengage the key switch and disable actuators
+    \item \primary{} and \secondary{}: Retreat to the Minimum Safe Distance.
     \item \secondary{}: Confirm that \primary{} and \secondary{} are at the Minimum Safe Distance.
     \item \textbf{\textit{PAUSE POINT}}
-    \item \ops: Give the system control key to \control{}.
     \item \control: Confirm that all actuator controls are in the off state:
     \begin{checklist}
         \item Remote Fill Valve
@@ -367,10 +384,18 @@ The launch operations team consists of four personnel:
 % begin A4 section -- {{{
 \subsection{[A4] Abort Procedure - Leak At Fill Plumbing}
 \begin{checklist}
-    \item \primary{}: Close the Parallel Fill Valve.
+    \item \control{}: Close the Remote Fill Valve.
+    \item \control{}: Open the Tank Vent Valve.
+    \item \control{}: Open the Remote Vent Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item P2: Fill line pressure
+        \item P3: Rocket Tank pressure
+    \end{checklist}
+    \item \primary{} and \secondary{}: Return to plumbing setup
     \item \primary{}: Close the Cylinder Valve.
-    \item \primary{}: Slowly open the Parallel Fill Valve.
     \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
     \item \control{}: Confirm that the fill and supply pressures are atmospheric.
     \item \primary{}: Disarm the system:
         \begin{checklist}    
