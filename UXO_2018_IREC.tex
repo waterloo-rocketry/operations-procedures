@@ -32,6 +32,7 @@ Additionally, this document contains five abort procedures:
     \item \textbf{A3}, \textit{Abort Procedure - High Supply Pressure}, is used if the oxidizer pressure is above the acceptable limit for launch.
     \item \textbf{A4}, \textit{Abort Procedure - Leak At Fill Plumbing}, is used if a plumbing leak is detected during manual fill leak checks.
     \item \textbf{A5}, \textit{Abort Procedure - Remote Disconnect or Ignition Failure}, is used if the remote disconnect or ignition systems fail, necessitating a full vent of the oxidizer tank.
+    \item \textbf{A\LARGE$\gamma$}, \textit{Abort Procedure - Voice Contact Loss}, is used if the operators at the launch site lose the ability to communicate with the operators at launch control.
 \end{itemize}
 % end contents subsection -- }}}
 
@@ -492,5 +493,70 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
 \end{checklist}
 \setcounter{checklistnum}{0}
 % end A5 section -- }}}
+
+% begin abort procedure gamma -- {{{
+\subsection{[A{\LARGE$\gamma$}] Abort Procedure - Voice Contact Loss - For Launch Control Operators}
+\begin{checklist}
+    \item \control{}: Remove the system control key from the client side box.
+    \item \ops{}: Attempt to regain communication with the operators at the pad:
+    \begin{checklist}
+        \item Send ``\ops{} to \secondary{}, \ops{} to \secondary{}, \secondary{} please come in''.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+        \item Check batteries in radio.
+        \item Check that radio is set to the proper channel.
+        \item Check that radio volume is high enough.
+        \item Wait 30 seconds, then send message again.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+    \end{checklist}
+    \item \ops: Wait 30 seconds.
+    \item \ops: Send ``\ops{} to \secondary{}, \ops{} to \secondary{}, going to full abort. Say again, going to full abort.''
+    \item \ops: Inform the ESRA official that launch operations will be aborted.
+    \item \ops: Wait for operators to return from pad.
+    \item \ops: Proceed with teardown and disassembly.
+\end{checklist}
+
+% add a page break, since the only piece of paper that the launch pad
+% operators should be carrying is this one abort procedure
+\newpage
+
+\subsection{[A{\LARGE$\gamma$}] Abort Procedure - Voice Contact Loss - For Launch Pad Operators}
+\begin{checklist}
+    \item \secondary{}: Attempt to regain communication with the operators at launch control:
+    \begin{checklist}
+        \item Send ``\secondary{} to \ops{}, \secondary{} to \ops{}, \ops{} please come in''.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+        \item Check batteries in radio.
+        \item Check that radio is set to the proper channel.
+        \item Check that radio volume is high enough.
+        \item Wait 30 seconds, then send message again.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+    \end{checklist}
+    \item \secondary{} and \primary{}: Approach the rocket, listening for hisses coming from fill system
+    \item \primary{}: Close the cylinder valve.
+    \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \secondary{} and \primary{}: Return to launch control.
+\end{checklist}
+% end abort procedure gamma -- }}}
 
 \end{document}
