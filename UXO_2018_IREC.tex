@@ -144,6 +144,16 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \item Secondary Ignition
     \end{checklist}
     \item \control: Confirm that all DAQ readings are displaying appropriately.
+    \item \ops{}: Record the resting DAQ values:
+
+    \begin{tabu} to \textwidth { |[1pt]X[c]|[1pt]X[c]|[1pt]X[c]|[1pt]X[c]|[1pt] }
+    \tabucline[1pt]{}
+    [M] Dry Mass (lbs) & [P1] Supply Pressure (psi) & [P2] Fill Line Pressure (psi) & [P3] Oxidizer Tank Pressure (psi) \\
+    \tabucline[1pt]{}
+    \vspace{1in} & & & \\
+    \tabucline[1pt]{}
+    \end{tabu}
+    
     \item \control: Remove the system control key and give it to \ops.
     \item \primary: Arm the payload using the transponder.
     \item \primary: Arm recovery avionics using the magnetic switches
@@ -235,6 +245,7 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \item Tank Vent Valve
     \end{checklist}
     \item \control{}: Engage the key switch and enable actuators.
+    \item \control{}: Open and close the Tank Vent Valve, ensuring that the limit switch reading updates accordingly.
     \item \control{}: Open the Remote Fill Valve.
     \item \control{}: Confirm the following pressures are increasing:
     \begin{checklist}
@@ -286,7 +297,7 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \control{}: Close the Tank Vent Valve.
     \item \control{}: Close the Remote Fill Valve.
     \item \control{}: Open the Remote Vent Valve.
-    \item \control{}: Confirm that the fill line pressure is atmospheric.
+    \item \control{}: Confirm that the fill line pressure [P2] is atmospheric.
     \item \control{}: Actuate Remote Disconnect.
      \begin{checklist}[label=$\bullet$]
         \item If Remote Disconnect fails to actuate:
@@ -332,7 +343,7 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \item \control{}: Disarm RLCS:
     \begin{checklist}
         \item Disable actuator control by removing the system control key.
-        \item Give the system control  key to \ops{}.
+        \item Give the system control key to \ops{}.
     \end{checklist}
     \item \ops: Confirm that RLCS is disarmed and \ops{} is in possession of the system control  key.
     \item \ops{}: Proceed only when clearance is received from the Launch Control Officer to approach the Launch Tower.
