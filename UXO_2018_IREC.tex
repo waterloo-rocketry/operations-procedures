@@ -1,0 +1,573 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge Unexploded Ordnance Hybrid Rocket\\
+2018 IREC\\
+\vspace{1cm}
+\Large Launch Operations Procedures}
+
+%begin operators definitions -- {{{
+\operator{ops}{Blue}{OPS}{Operations Director}
+\operator{control}{Maroon}{CONTROL}{Control System Operator}
+\operator{primary}{Fuchsia}{PRIMARY}{Primary Fill Operator}
+\operator{secondary}{Emerald}{SECONDARY}{Secondary Fill Operator}
+%end operators definitions -- }}}}}
+
+\begin{document}
+\input{common/standard_titlepage}
+
+\section{Background and Reference}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains two nominal procedures:
+\begin{itemize}
+    \item \textbf{N1}, \textit{Final Setup and Pre-Launch Checks}, comprises the final checks and tests performed on the Remote Launch Control System (RLCS) prior to rocket launch, as well as avionics systems arming.
+    \item \textbf{N2}, \textit{Fill and Launch Operations}, comprises steps for oxidizer fill and rocket launch.
+\end{itemize}
+Additionally, this document contains five abort procedures:
+\begin{itemize}
+    \item \textbf{A1}, \textit{Abort Procedure - Leak At Supply Plumbing}, is used if a plumbing leak is detected when the supply cylinder is initially opened.
+    \item \textbf{A2}, \textit{Abort Procedure - Low Supply Pressure}, is used if the oxidizer pressure is below the acceptable limit for launch.
+    \item \textbf{A3}, \textit{Abort Procedure - High Supply Pressure}, is used if the oxidizer pressure is above the acceptable limit for launch.
+    \item \textbf{A4}, \textit{Abort Procedure - Leak At Fill Plumbing}, is used if a plumbing leak is detected during manual fill leak checks.
+    \item \textbf{A5}, \textit{Abort Procedure - Remote Disconnect or Ignition Failure}, is used if the remote disconnect or ignition systems fail, necessitating a full vent of the oxidizer tank.
+    \item \textbf{A\LARGE$\gamma$}, \textit{Abort Procedure - Voice Contact Loss}, is used if the operators at the launch site lose the ability to communicate with the operators at launch control.
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin personnel required section -- {{{
+\subsection{Personnel Required}
+The launch operations team consists of four personnel:
+\begin{checklist}
+    \item The \opsfull{} is stationed at Launch Control. \ops{} directs operations procedures and communicates with the other launch personnel.
+    \item The \controlfull{} is stationed at Launch Control and is responsible for operation of RLCS, including remote fill, disconnect, and ignition.
+    \item The \primaryfull{} is initially stationed at the Launch Tower and carries out all tasks occurring at the Launch Tower. \primary{} engages the remote disconnect system, arms the vehicle recovery deployment system, connects the ignition wires to the rocket, and operates all manual valves during the manual portion of fill.
+    \item The \secondaryfull{} is the backup for \primary{}, and communicates with \ops{}. If \primary{} becomes incapacitated, \secondary{} is responsible for removing them from danger.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end personnel required section -- }}}
+
+% begin sign off -- {{{
+\subsection{Sign-Off}
+\textit{To be completed by all test personnel after reading and familiarization with procedures}
+\begin{checklist}
+    \item \opsfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \controlfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \primaryfull  \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \secondaryfull\tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end sign off -- }}}
+\newpage{}
+
+\section{[N1] Final Setup and Pre-Launch Checks} \flag{Blue}
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Ensure that the following procedures are complete:
+    \begin{checklist}
+        \item Rocket Assembly procedure
+        \item RLCS Setup procedure
+        \item Launch Tower Setup procedure
+    \end{checklist}
+    \item Ensure that all personnel as defined above are available and have completed the sign-off.
+    \item Ensure that the following personnel have walkie-talkies and communication is functional:
+    \begin{checklist}
+        \item \ops{}
+        \item \control{}
+        \item \primary{}
+        \item \secondary{}
+    \end{checklist}
+    \item Ensure that \ops{} is in possession of the system control key.
+    \item Ensure that the client-side RLCS box is powered off.
+    \item Ensure that the locations of Launch Control, Launch Tower, and the Minimum Safe Distance are clearly defined.
+    
+\end{checklist}
+\begin{center}
+\begin{tabu} to \textwidth { |[1pt]X[c]|[1pt]X[c]|[1pt]X[c]|[1pt] }
+\tabucline[1pt]{}
+Launch Control & Launch Tower & Minimum Safe Distance \\
+\tabucline[1pt]{}
+\vspace{1in} & & \\
+\tabucline[1pt]{}
+\end{tabu}
+\end{center}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+% begin Fill System Check section -- {{{
+\subsection{Nominal Procedure}
+\begin{checklist}
+    \item \primary{}: Confirm that the following valves are initially closed:
+        \begin{checklist}
+        \item Cylinder Valve
+        \item Remote Fill Valve
+        \item Parallel Fill Valve
+        \item Series Fill Valve
+        \item Line Vent Valve
+        \item Parallel Vent Valve
+    \end{checklist}
+    \item \primary{}: Confirm that the ignition connectors are disconnected from the rocket.
+    \item \control{}: Power on the client-side RLCS box.
+    \item \control{} and \secondary: Confirm that the following actuators fail to move:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Injector Valve
+    \end{checklist}
+    \item \secondary: Confirm that the voltage across the ignition connectors is 0 V.
+    \item \ops: Give the system control key to \control{}.
+    \item \control: Confirm that all actuator controls are in the off state:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Tank Vent Valve
+        \item Primary Ignition
+        \item Secondary Ignition
+        \item Injector Valve
+    \end{checklist}
+    \item \control{}: Engage the key switch and enable actuators.
+    \item \control{} and \secondary: Confirm that all actuators actuate as intended:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Tank Vent Valve
+        \item Injector Valve
+    \end{checklist}
+    \item \control{} and \secondary: Confirm that the ignition voltage is 12 V when the ignition button is fired:
+    \begin{checklist}
+        \item Primary Ignition
+        \item Secondary Ignition
+    \end{checklist}
+    \item \control: Confirm that all DAQ readings are displaying appropriately.
+    \item \ops{}: Record the resting DAQ values:
+
+    \begin{tabu} to \textwidth { |[1pt]X[c]|[1pt]X[c]|[1pt]X[c]|[1pt]X[c]|[1pt] }
+    \tabucline[1pt]{}
+    [M] Dry Mass (lbs) & [P1] Supply Pressure (psi) & [P2] Fill Line Pressure (psi) & [P3] Oxidizer Tank Pressure (psi) \\
+    \tabucline[1pt]{}
+    \vspace{1in} & & & \\
+    \tabucline[1pt]{}
+    \end{tabu}
+    
+    \item \control: Remove the system control key and give it to \ops.
+    \item \primary: Arm the payload using the transponder.
+    \item \primary: Arm recovery avionics using the magnetic switches
+    \item \primary: Arm remote disconnect by connecting the springs, fill adapter, and strap.
+    \item \primary: Connect the ignition connectors to the rocket.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end Fill System Check section -- }}}
+\newpage
+
+\section{[N2] Fill and Launch Operations} \flag{brown}
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Ensure that the following procedure is complete:
+    \begin{checklist}
+        \item \textbf{N1}, \textit{Final Setup and Pre-Launch Checks}
+    \end{checklist}
+    \item Ensure that all personnel are available and have completed the sign-off.
+    \item Ensure that the following personnel have walkie-talkies and communication is functional:
+    \begin{checklist}
+        \item \ops{}
+        \item \control{}
+        \item \primary{}
+        \item \secondary{}
+    \end{checklist}
+    \item Ensure that \primary{} and \secondary{} are wearing face shields and have no exposed skin.
+    \item Ensure that \primary{} is wearing thermal gloves.
+    \item Ensure that \ops{} is in possession of the system control key.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+% begin Remote Control Procedure section -- {{{
+\subsection{Nominal Procedure}
+\begin{checklist}
+    \item \secondary: Confirm that no personnel other than \primary{} and \secondary{} are within the Minimum Safe Distance.
+    \item \ops: Confirm that the actuator key switch is disabled and that only \ops{} is in possession of the system control  key.
+    \item \ops: Confirm that the Range Safety Officer and Launch Control Officer have given clearance to proceed with fill procedures.
+    \item \control: Confirm that the RLCS client-side box is on and displaying DAQ information.
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+        \item Cylinder Valve
+        \item Remote Fill Valve
+        \item Parallel Fill Valve
+        \item Series Fill Valve
+        \item Line Vent Valve
+        \item Parallel Vent Valve
+    \end{checklist}
+    \item \ops{}: Confirm that the Tank Vent Valve is initially open.
+    \item \ops{}: Confirm that the Pressure Relief Valve is initially closed.
+    \item \ops{}: Confirm that the Injector Valve is initially closed.
+    \item \primary: Slowly open the Cylinder Valve through $\frac{3}{4}$ of a turn.
+    \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed:
+        \begin{checklist}
+            \item \ops{}: Proceed to procedure A1.
+        \end{checklist}
+    \end{checklist}
+    \item \primary{}: Communicate the supply line pressure as visible on the Pressure Gauge.
+    \begin{checklist}[label=$\bullet$]
+        \item If the supply line pressure is below 800 psi:
+        \begin{checklist}
+            \item \ops{}: Proceed to procedure \textbf{A2}.
+        \end{checklist}
+        \item If the supply line pressure exceeds 1000 psi:
+        \begin{checklist}
+            \item \ops{}: Proceed to procedure \textbf{A3}.
+        \end{checklist}
+    \end{checklist}
+    \item \control: Confirm that the supply line pressure as read by \primary{} agrees with the supply line pressure [P1] measured by the DAQ system.
+    \item \ops{}: Record the resting rocket dry mass and supply pressure:
+
+    \begin{tabu} to \textwidth { |[1pt]X[c]|[1pt]X[c]|[1pt] }
+    \tabucline[1pt]{}
+    [M] Dry Mass (lbs) & [P1] Supply Pressure (psi) \\
+    \tabucline[1pt]{}
+    \vspace{1in} & \\
+    \tabucline[1pt]{}
+    \end{tabu}
+
+    \item \primary: Open the Series Fill Valve.
+    \item \primary{} and \secondary{}: Retreat 100 ft from the fill system.
+    \item \ops{}: Give the system control key to \control{}.
+    \item \control{}: Confirm the following valves are closed:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Remote Vent Valve
+        \item Tank Vent Valve
+    \end{checklist}
+    \item \control{}: Engage the key switch and enable actuators.
+    \item \control{}: Open and close the Tank Vent Valve, ensuring that the limit switch reading updates accordingly.
+    \item \control{}: Open the Remote Fill Valve.
+    \item \control{}: Confirm the following pressures are increasing:
+    \begin{checklist}
+        \item {[P2]} Fill line pressure
+        \item {[P3]} Oxidizer tank pressure
+    \end{checklist}
+    \item \control{}: Close the Remote Fill Valve.
+    \item \control{}: Confirm the following pressures are stable:
+    \begin{checklist}
+        \item {[P2]} Fill line pressure
+        \item {[P3]} Oxidizer tank pressure
+    \end{checklist}
+    \begin{checklist}[label=$\bullet$]
+        \item If the pressures are decreasing:
+        \begin{checklist}
+            \item \ops{}: Proceed to procedure \textbf{A4}.
+        \end{checklist}
+    \end{checklist}
+    \item \control{}: Open the Remote Vent Valve.
+    \item \control{}: Open the Tank Vent Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P2]} Fill line pressure
+        \item {[P3]} Oxidizer tank pressure
+    \end{checklist}
+    \item \control{}: Disengage the key switch and disable actuators
+    \item \primary{} and \secondary{}: Retreat to the Minimum Safe Distance.
+    \item \secondary{}: Confirm that \primary{} and \secondary{} are at the Minimum Safe Distance.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \control: Confirm that all actuator controls are in the off state:
+    \begin{checklist}
+        \item Remote Fill Valve
+        \item Line Vent Valve
+        \item Remote Disconnect
+        \item Tank Vent Valve
+        \item Primary Ignition
+        \item Secondary Ignition
+        \item Injector Valve
+    \end{checklist}
+    \item \control{}: Engage the key switch and enable actuators.
+    \item \control{}: Open the Tank Vent Valve.
+    \item \control{}: Open the Remote Fill Valve.
+    \item \control{}: Monitor the RLCS display for rocket mass and oxidizer tank pressure.
+    \item \ops{}: Proceed only when the following is true:
+    \begin{checklist}
+        \item Rocket mass [M] plateaus
+        \item Oxidizer tank pressure [P3] is within the acceptable limits
+    \end{checklist}
+    \item \control{}: Close the Tank Vent Valve.
+    \item \control{}: Close the Remote Fill Valve.
+    \item \control{}: Open the Remote Vent Valve.
+    \item \control{}: Confirm that the fill line pressure [P2] is atmospheric.
+    \item \control{}: Actuate Remote Disconnect.
+     \begin{checklist}[label=$\bullet$]
+        \item If Remote Disconnect fails to actuate:
+        \begin{checklist}
+            \item \ops{}: Proceed to procedure \textbf{A5}.
+        \end{checklist}
+    \end{checklist}
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \ops: Perform pre-launch checks:
+    \begin{checklist}
+        \item Request clearance for launch from the Launch Control Officer.
+        \item Confirm that all members are aware of launch.
+    \end{checklist}    
+    \item \primary{}: Perform engine startup procedure:
+    \begin{checklist}
+        \item Arm the Primary Ignition switch.
+        \item Hold down the Fire button until the Primary current reading drops to 0 A.
+        \begin{checklist}[label=$\bullet$]
+            \item In the event of a failed ignition (current drop not observed within 1 minute):
+            \begin{checklist}
+                \item \primary: Disarm the Primary Ignition switch.
+                \item \primary: Arm the Secondary Ignition switch.
+                \item \ops: Revisit ignition procedure.
+            \end{checklist}
+            \item In the event of a second failed ignition (current drop not observed within 1 minute):
+            \begin{checklist}
+                \item \primary: Disarm the Secondary Ignition switch.
+                \item \ops: Proceed to procedure \textbf{A5}.
+            \end{checklist}
+        \end{checklist}
+        \item \primary: Start the engine by opening the Injector Valve.
+    \end{checklist}
+    \item \textbf{ALL}: Observe the rocket during takeoff, ascent, and recovery:
+    \begin{checklist}
+        \item First vehicle motion
+        \item Launch rail departure
+        \item Engine burnout
+        \item Payload deployment
+        \item Drogue parachute deployment
+        \item Main parachute deployment
+        \item Approximate recovery area/direction
+    \end{checklist}
+    \item \control{}: Disarm RLCS:
+    \begin{checklist}
+        \item Disable actuator control by removing the system control key.
+        \item Give the system control key to \ops{}.
+    \end{checklist}
+    \item \ops: Confirm that RLCS is disarmed and \ops{} is in possession of the system control  key.
+    \item \ops{}: Proceed only when clearance is received from the Launch Control Officer to approach the Launch Tower.
+    \item \primary{} and \secondary: Approach the Launch Tower.
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \primary{} and \secondary: Retreat 20 ft from the fill system.
+    \item \ops: Give the master key to \control{}
+    \item \control{}: Engage the key switch and enable actuators.
+    \item \control{}: Open the Remote Fill Valve.
+    \item \control{}: Confirm that the supply line pressure [P1] is atmospheric.
+    \item \primary{}: Disconnect the supply line from the supply cylinder.
+    \item \primary{}: Replace the cap on the nitrous oxide supply cylinder.
+    \item \ops{}: Proceed with teardown and disassembly.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end Remote Control Procedure section -- }}}
+
+\newpage
+    
+\section{Abort Procedures} \flag{red}
+% begin A1 section -- {{{
+\subsection{[A1] Abort Procedure - Leak At Supply Plumbing}
+\begin{checklist}
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
+    \item \primary{}: Disarm the system:
+        \begin{checklist}    
+            \item Disconnect the ignition leads from the rocket.
+            \item Detatch the torsion springs from the disconnect mechanism.
+            \item Disarm the recovery electronics system using the magnetic switches.
+            \item Disarm the payload using the transponder.
+            \item Disconnect the fill line from the supply cylinder.
+            \item Replace the cap on the nitrous oxide supply cylinder.
+        \end{checklist}
+    \item \ops{}: Revisit plumbing setup.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end A1 section -- }}}
+
+% begin A2 section -- {{{
+\subsection{[A2] Abort Procedure - Low Supply Pressure}
+\begin{checklist}
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
+    \item \primary{}: Allow the supply cylinder to warm up.
+    \item \ops{}: Revisit \textbf{N1}.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end A2 section -- }}}comprises the final checks and tests performed on the Remote Launch Control System (RLCS) prior to rocket launch, as well as avionics systems arming
+
+% begin A3 section -- {{{
+\subsection{[A3] Abort Procedure - High Supply Pressure}
+\begin{checklist}
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
+    \item \primary{}: Disarm the system:
+        \begin{checklist}    
+            \item Disconnect the ignition leads from the rocket.
+            \item Detatch the torsion springs from the disconnect mechanism.
+            \item Disarm the recovery electronics system using the magnetic switches.
+            \item Disarm the payload using the transponder.
+            \item Disconnect the fill line from the supply cylinder.
+            \item Replace the cap on the nitrous oxide supply cylinder.
+        \end{checklist}
+    \item \ops{}: Revisit cylinder cooling methods.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end A3 section -- }}}
+
+% begin A4 section -- {{{
+\subsection{[A4] Abort Procedure - Leak At Fill Plumbing}
+\begin{checklist}
+    \item \control{}: Close the Remote Fill Valve.
+    \item \control{}: Open the Tank Vent Valve.
+    \item \control{}: Open the Remote Vent Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item P2: Fill line pressure
+        \item P3: Rocket Tank pressure
+    \end{checklist}
+    \item \primary{} and \secondary{}: Return to plumbing setup
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
+    \item \primary{}: Disarm the system:
+        \begin{checklist}    
+            \item Disconnect the ignition leads from the rocket.
+            \item Detatch the torsion springs from the disconnect mechanism.
+            \item Disarm the recovery electronics system using the magnetic switches.
+            \item Disarm the payload using the transponder.
+            \item Disconnect the fill line from the supply cylinder.
+            \item Replace the cap on the nitrous oxide supply cylinder.
+        \end{checklist}
+    \item \ops{}: Revisit plumbing setup.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end A4 section -- }}}
+
+% begin A5 section -- {{{
+\subsection{[A5] Abort Procedure - Remote Disconnect or Ignition Failure}
+\begin{checklist}
+    \item \control{}: Open the Tank Vent Valve.
+    \item \control{}: Monitor the RLCS display for rocket mass and oxidizer tank pressure as the oxidizer tank vents.
+    \item \ops{}: Proceed only when the following is true:
+    \begin{checklist}
+        \item Rocket mass is equal to the pre-launch recorded mass
+        \item Oxidizer tank pressure [P3] is atmospheric
+        \item The Launch Control Officer has given clearance to approach the Launch Tower.
+    \end{checklist}
+    \item \primary{} and \secondary: Approach the Launch Tower.
+    \item \primary{}: Close the Cylinder Valve.
+    \item \primary{}: Open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \primary{} and \secondary: Retreat 20 ft from the fill system.
+    \item \ops: Give the system control key to \control{}
+    \item \control{}: Engage the system control switch and enable actuators.
+    \item \control{}: Open the Remote Fill Valve.
+    \item \control{}: Confirm the following pressures are atmospheric:
+    \begin{checklist}
+        \item {[P1]} Supply pressure
+        \item {[P2]} Fill line pressure
+    \end{checklist}
+    \item \primary{}: Disarm the system:
+        \begin{checklist}    
+            \item Disconnect the ignition leads from the rocket.
+            \item Detatch the torsion springs from the disconnect mechanism.
+            \item Disarm the recovery electronics system using the magnetic switches.
+            \item Disarm the payload using the transponder.
+            \item Disconnect the fill line from the supply cylinder.
+            \item Replace the cap on the nitrous oxide supply cylinder.
+        \end{checklist}
+    \item \ops{}: Proceed with teardown and disassembly.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end A5 section -- }}}
+
+% begin abort procedure gamma -- {{{
+\subsection{[A{\LARGE$\gamma$}] Abort Procedure - Voice Contact Loss - For Launch Control Operators}
+\begin{checklist}
+    \item \control{}: Remove the system control key from the client side box.
+    \item \ops{}: Attempt to regain communication with the operators at the pad:
+    \begin{checklist}
+        \item Send ``\ops{} to \secondary{}, \ops{} to \secondary{}, \secondary{} please come in''.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+        \item Check batteries in radio.
+        \item Check that radio is set to the proper channel.
+        \item Check that radio volume is high enough.
+        \item Wait 30 seconds, then send message again.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+    \end{checklist}
+    \item \ops: Wait 30 seconds.
+    \item \ops: Send ``\ops{} to \secondary{}, \ops{} to \secondary{}, going to full abort. Say again, going to full abort.''
+    \item \ops: Inform the ESRA official that launch operations will be aborted.
+    \item \ops: Wait for operators to return from pad.
+    \item \ops: Proceed with teardown and disassembly.
+\end{checklist}
+
+% add a page break, since the only piece of paper that the launch pad
+% operators should be carrying is this one abort procedure
+\newpage
+
+\subsection{[A{\LARGE$\gamma$}] Abort Procedure - Voice Contact Loss - For Launch Pad Operators}
+\begin{checklist}
+    \item \secondary{}: Attempt to regain communication with the operators at launch control:
+    \begin{checklist}
+        \item Send ``\secondary{} to \ops{}, \secondary{} to \ops{}, \ops{} please come in''.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+        \item Check batteries in radio.
+        \item Check that radio is set to the proper channel.
+        \item Check that radio volume is high enough.
+        \item Wait 30 seconds, then send message again.
+        \begin{checklist}[label=$\bullet$]
+            \item If contact is restored:
+            \begin{checklist}
+                \item Return to normal operations.
+            \end{checklist}
+        \end{checklist}
+    \end{checklist}
+    \item \secondary{} and \primary{}: Approach the rocket, listening for hisses coming from fill system
+    \item \primary{}: Close the cylinder valve.
+    \item \primary{}: Slowly open the Parallel Vent Valve.
+    \item \primary{}: Slowly open the Parallel Fill Valve.
+    \item \secondary{} and \primary{}: Return to launch control.
+\end{checklist}
+% end abort procedure gamma -- }}}
+
+\end{document}
