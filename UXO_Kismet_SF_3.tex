@@ -92,6 +92,7 @@ The test operations team consists of nine personnel:
     \item Ensure that all spectators and test personnel are wearing safety glasses and hearing protection.
     \item Ensure that \primary{} and \secondary{} are wearing face shields and have no exposed skin.
     \item Ensure that \primary{} is wearing thermal gloves.
+    \item Ensure that \secondary{} is in possession of a multimeter.
     \item Ensure that \ops{} is in possession of the system control key.
 \end{checklist}
 \setcounter{checklistnum}{0}
@@ -102,13 +103,13 @@ The test operations team consists of nine personnel:
 % begin Fill System Check section -- {{{
 \subsection{Fill System Check Procedure}
 \begin{checklist}
+    \item \secondary{}: Confirm that the ignition wires are not connected to the engine.
     \item \primary{}: Confirm that the following valves are initially closed:
     \begin{checklist}
         \item Cylinder Valve
         \item Remote Fill Valve
         \item Parallel Fill Valve
         \item Tank Vent Valve
-        \item Pressure Relief Valve
         \item Line Vent Valve
         \item Injector Valve
     \end{checklist}
@@ -191,7 +192,6 @@ The test operations team consists of nine personnel:
         \item Cylinder Valve
         \item Remote Fill Valve
         \item Parallel Fill Valve
-        \item Pressure Relief Valve
         \item Tank Vent Valve
         \item Line Vent Valve
         \item Injector Valve
@@ -236,7 +236,7 @@ The test operations team consists of nine personnel:
     \item \daq{}: Communicate the supply cylinder pressure as read by the Fill Pressure Transducer.
     \item \daq{}: Confirm that the two pressure measurements are in agreement.
     \item \primary{} and \secondary{}: Retreat to the test control area, behind the blast shield.
-    \item \primary{}: Confirm that all actuator controls are in the ``off'' position:
+    \item \control{}: Confirm that all actuator controls are in the ``off'' position:
     \begin{checklist}
         \item Remote Fill Valve
         \item Tank Vent Valve
@@ -309,7 +309,7 @@ The test operations team consists of nine personnel:
     \item \control{}: Perform engine startup procedure:
     \begin{checklist}
         \item Arm the Primary Ignition switch.
-        \item Hold down the Fire button until black smoke is observed.
+        \item Hold down the Fire button until black smoke is observed. Continuously communicate the ignition current reading as displayed by the control box.
         \begin{checklist}[label=$\bullet$]
             \item In the event of a failed ignition (smoke not observed within 1 minute):
             \begin{checklist}
@@ -332,15 +332,7 @@ The test operations team consists of nine personnel:
         \end{checklist}
         \item \control{}: Start the engine by opening the Injector Valve.
     \end{checklist}
-    \item \textbf{ALL}: Observe the plume:
-    \begin{checklist}[label=$\bullet$]
-        \item If any unexpected events occur during the engine firing:
-        \begin{checklist}
-            \item \primary{}: Open the Line Vent Valve using the ropes.
-            \item \ops{}: Wait for 3 seconds.
-            \item \control{}: Close the Injector Valve.
-        \end{checklist}
-    \end{checklist}
+    \item \textbf{ALL}: Observe the plume.
     \item \textbf{\textit{PAUSE POINT}}
     \item \ops{}: Wait for at least 3 minutes before proceeding.
     \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
