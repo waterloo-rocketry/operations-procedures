@@ -94,6 +94,7 @@ The test operations team consists of nine personnel:
     \begin{checklist}
         \item Cylinder Valve
         \item Remote Fill Valve
+		\item Series Fill Valve
         \item Parallel Fill Valve
         \item Motorized Vent Valve
         \item Line Vent Valve
@@ -101,7 +102,6 @@ The test operations team consists of nine personnel:
     \end{checklist}
     \item \primary{}: Confirm that the following valves are initially open:
     \begin{checklist}
-        \item Series Fill Valve
         \item Linear Actuator Vent Valve
     \end{checklist}
     \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
@@ -125,8 +125,7 @@ The test operations team consists of nine personnel:
     \item \primary{}: Communicate the supply cylinder pressure as visible on the Pressure Gauge.
     \item \daq{}: Communicate the supply cylinder pressure as read by the Fill Pressure Transducer.
     \item \daq{}: Confirm that the two pressure measurements are in agreement.
-    \item \primary{} and \secondary: Retreat to the test control area, behind the blast shield.
-    \item \primary{}: Perform the following control system checks:
+    \item \control{}: Perform the following control system checks:
     \begin{checklist}
         \item Confirm that all actuator controls are in the ``closed'' position:
         \begin{checklist}
@@ -147,35 +146,21 @@ The test operations team consists of nine personnel:
     \item \ops: Give the system control key to \control{}.
     \item \control{}: Engage the key switch and power on the control boxes.
     \item \control{}: Open the Motorized Vent Valve.
-    \item \control{}: Open the Remote Fill Valve.
+    \item \primary{}: Open the Parallel Fill Valve.
     \begin{checklist}[label=$\bullet$]
         \item If leaks are observed:
         \begin{checklist}
-            \item \control{}: Close the Remote Fill Valve.
+            \item \primary{}: Close the Parallel Fill Valve.
             \item \control{}: Open the Injector Valve.
             \item \ops: Proceed only when the oxidizer tank has fully vented.
-            \item \primary{} and \secondary: Approach the test plumbing.
             \item \primary{}: Close the Cylinder Valve.
-            \item \control{}: Open the Remote Fill Valve.
             \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
             \item \ops{}: Abort test procedures and revisit plumbing setup.
-        \end{checklist}
-        \item If the Remote Fill Valve fails to open:
-        \begin{checklist}
-            \item \ops{}: Abort test procedures and revisit control system setup.
         \end{checklist}
     \end{checklist}
     \item \ops{}: Proceed only when a white plume is visible from the vent plug.
     \item \control{}: Close the Motorized Vent Valve.
-    \item \control{}: Close the Remote Fill Valve.
-    \begin{checklist}[label=$\bullet$]
-        \item If the Remote Fill Valve fails to close:
-        \begin{checklist}
-            \item \primary{} and \secondary: Approach the test plumbing.
-            \item \primary{}: Close the Series Fill Valve.
-            \item \primary{} and \secondary: Retreat to the test control area.
-        \end{checklist}
-    \end{checklist}
+    \item \primary{}: Close the Parallel Fill Valve.
     \item \heat: Open the Tank Heating Valve.
     \item \daq{}: Proceed only when the oxidizer tank pressure is at least 750 psi.
     \begin{checklist}[label=$\bullet$]
@@ -186,7 +171,7 @@ The test operations team consists of nine personnel:
             \item \ops: Proceed only when the oxidizer tank has fully vented.
             \item \primary{} and \secondary: Approach the test plumbing.
             \item \primary{}: Close the Cylinder Valve.
-            \item \control{}: Open the Remote Fill Valve.
+            \item \primary{}: Open the Parallel Fill Valve.
             \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
             \item \ops{}: Abort test procedures and revisit plumbing setup.
         \end{checklist}
@@ -216,7 +201,6 @@ The test operations team consists of nine personnel:
     \item \ops{}: Proceed only when the oxidizer tank has fully vented.
     \item \primary{} and \secondary: Approach the test plumbing.
     \item \primary{}: Close the Cylinder Valve.
-    \item \control{}: Open the Remote Fill Valve.
     \item \primary{}: Slowly open the Parallel Fill Valve.
     \item \primary{}: Disconnect the fill line from the supply cylinder.
     \item \primary{}: Replace the cap on the carbon dioxide supply cylinder.
