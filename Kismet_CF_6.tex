@@ -39,7 +39,7 @@ The test operations team consists of nine personnel:
     \item The \primaryfull{} is the main system operator. \primary{} operates all manual valves as well as the test control system.
     \item The \secondaryfull{} is the backup for \primary{}, and communicates with OPS. If \primary{} becomes incapacitated, \secondary{} is responsible for removing them from danger.
     \item The \daqfull{} monitors and operates the test data acquisition system.
-    \item the \controlfull{} operates the test control system, including actuation of remote valves.
+    \item The \controlfull{} operates the test control system, including actuation of remote valves.
     \item The \heatfull{} operates the valves for the tank heating system.
     \item \perifull{}, \periifull{}, and \periiifull{} ensure that no unauthorized personnel enter the testing area during test operations.
 \end{checklist}
@@ -90,7 +90,6 @@ The test operations team consists of nine personnel:
 % begin Cold Flow Test Procedure section -- {{{
 \subsection{Cold Flow Test Procedure}
 \begin{checklist}
-    \item \ops{}: Confirm that the camera equipment is set up.
     \item \primary{}: Confirm that the following valves are initially closed:
     \begin{checklist}
         \item Cylinder Valve
@@ -133,6 +132,7 @@ The test operations team consists of nine personnel:
         \end{checklist}
     \end{checklist}
     \item \textbf{\textit{PAUSE POINT}}
+    \item \ops{}: Confirm that the camera equipment is set up.
     \item \ops{}: Poll the following personnel for GO/NO GO status:
     \begin{checklist}
         \item \heat{}
@@ -152,7 +152,7 @@ The test operations team consists of nine personnel:
         \item If leaks are observed:
         \begin{checklist}
             \item \control{}: Close the Remote Fill Valve.
-            \item \primary{}: Open the Injector Valve.
+            \item \primary{}: Open the Injector Valve using the ropes.
             \item \ops: Proceed only when the oxidizer tank has fully vented.
             \item \primary{}: Close the Cylinder Valve.
             \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
@@ -168,7 +168,7 @@ The test operations team consists of nine personnel:
         \item If the oxidizer tank pressure does not reach 750 psi:
         \begin{checklist}
             \item \heat: Close the Tank Heating Valve.
-            \item \primary{}: Open the Injector Valve.
+            \item \primary{}: Open the Injector Valve using the ropes.
             \item \ops: Proceed only when the oxidizer tank has fully vented.
             \item \primary{} and \secondary: Approach the test plumbing.
             \item \primary{}: Close the Cylinder Valve.
@@ -179,7 +179,7 @@ The test operations team consists of nine personnel:
     \end{checklist}
     \item \heat: Close the Tank Heating Valve.
     \item \textbf{\textit{PAUSE POINT}}
-    \item \primary{}: Conduct the cold flow test by opening the Injector Valve.
+    \item \primary{}: Conduct the cold flow test by opening the Injector Valve using the ropes.
     \item \textbf{\textit{PAUSE POINT}}
     \item \daq{}: Confirm that the Oxidizer Tank Pressure Transducer is reading atmospheric pressure.
     \item \control{}: Open the Motorized Vent Valve.
@@ -191,7 +191,6 @@ The test operations team consists of nine personnel:
     \item \primary{}: Disconnect the fill line from the supply cylinder.
     \item \primary{}: Replace the cap on the carbon dioxide supply cylinder.
     \item \daq{}: Confirm that the Fill Pressure Transducer is reading atmospheric pressure.
-    \item \ops{}: Wait for at least 3 minutes before proceeding.
     \item \peri{}, \perii{}, and \periii{}: Open the perimeter.
     \item \ops{}: Proceed with teardown and disassembly.
 \end{checklist}
