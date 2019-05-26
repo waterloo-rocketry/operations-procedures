@@ -25,14 +25,13 @@ This document contains the following procedures:
     \item \textbf{N1}, \textit{Final Setup and "Pre-Launch" Checks}, comprises partial rocket assembly and testing of avionics in full flight configuration
     \item \textbf{N2}, \textit{Fill Operations}, comprises propellant loading and off-loading
 \end{itemize}
-Additionally, this document contains six abort procedures:
+Additionally, this document contains five abort procedures:
 \begin{itemize}
     \item \textbf{A1}, \textit{Abort Procedure - Leak At Supply Plumbing}, is used if a plumbing leak is detected when the supply cylinder is initially opened.
     \item \textbf{A2}, \textit{Abort Procedure - Low Supply Pressure}, is used if the oxidizer pressure is below the acceptable limit for test purposes.
     \item \textbf{A3}, \textit{Abort Procedure - High Supply Pressure}, is used if the oxidizer pressure is above the acceptable limit for test purposes.
     \item \textbf{A4}, \textit{Abort Procedure - Leak At Fill Plumbing}, is used if a plumbing leak is detected during manual fill leak checks.
     \item \textbf{A5}, \textit{Abort Procedure - Remote Disconnect Failure}, is used if the remote disconnect system fails, necessitating a full vent of the oxidizer tank.
-    \item \textbf{A\LARGE$\gamma$}, \textit{Abort Procedure - Voice Contact Loss}, is used if the operators at the "launch site" lose the ability to communicate with the operators at launch control.
 \end{itemize}
 % end contents subsection -- }}}
 
@@ -42,7 +41,7 @@ The launch operations team consists of four personnel:
 \begin{checklist}
     \item The \opsfull{} is stationed at Launch Control. \ops{} directs operations procedures and communicates with the other launch personnel.
     \item The \controlfull{} is stationed at Launch Control and is responsible for operation of RLCS, remote fill, and disconnect.
-    \item The \primaryfull{} is initially stationed at the Launch Tower and carries out all tasks occurring at the Launch Tower. \primary{} engages the remote disconnect system, arms the vehicle recovery deployment system, connects the ignition wires to the rocket, and operates all manual valves during the manual portion of fill.
+    \item The \primaryfull{} is initially stationed at the Launch Tower and carries out all tasks occurring at the Launch Tower. \primary{} engages the remote disconnect system, connects the ignition wires to the rocket, and operates all manual valves during the manual portion of fill.
     \item The \secondaryfull{} is the backup for \primary{}, and communicates with \ops{}. If \primary{} becomes incapacitated, \secondary{} is responsible for removing them from danger.
 \end{checklist}
 \setcounter{checklistnum}{0}
@@ -155,8 +154,6 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
     \end{tabu}
     
     \item \control: Remove the system control key and give it to \ops.
-    \item \primary: Arm the payload using the transponder.
-    \item \primary: Arm recovery avionics using the magnetic switches
     \item \primary: Arm remote disconnect by connecting the springs, fill adapter, and strap.
     \item \primary: Connect the ignition connectors to the rocket.
 \end{checklist}
@@ -264,7 +261,17 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \end{checklist}
     \end{checklist}
     \item \control{}: Open the Line Vent Valve.
+    \item \control{}: Confirm the Fill line pressure is atmospheric
+    \item \control{}: Actuate remote disconnect
+        \begin{checklist}[label=$\bullet$]
+        \item If remote disconnect fails to actuate:
+        \begin{checklist}
+            \item \ops{}: Proceed to procedure \textbf{A5}.
+        \end{checklist}
+    \end{checklist}
+    \item \control{}: Confirm that limit switch indicates successful disconnection
     \item \control{}: Open the Tank Vent Valve.
+    \item \ops{}: Wait for tank to vent 
     \item \control{}: Confirm the following pressures are atmospheric:
     \begin{checklist}
         \item {[P2]} Fill line pressure
@@ -310,8 +317,6 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
             \item Detatch the torsion springs from the disconnect mechanism.
-            \item Disarm the recovery electronics system using the magnetic switches.
-            \item Disarm the payload using the transponder.
             \item Disconnect the fill line from the supply cylinder.
             \item Replace the cap on the nitrous oxide supply cylinder.
         \end{checklist}
@@ -352,8 +357,6 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
             \item Detatch the torsion springs from the disconnect mechanism.
-            \item Disarm the recovery electronics system using the magnetic switches.
-            \item Disarm the payload using the transponder.
             \item Disconnect the fill line from the supply cylinder.
             \item Replace the cap on the nitrous oxide supply cylinder.
         \end{checklist}
@@ -386,8 +389,6 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
             \item Detatch the torsion springs from the disconnect mechanism.
-            \item Disarm the recovery electronics system using the magnetic switches.
-            \item Disarm the payload using the transponder.
             \item Disconnect the fill line from the supply cylinder.
             \item Replace the cap on the nitrous oxide supply cylinder.
         \end{checklist}
@@ -424,8 +425,6 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
         \begin{checklist}    
             \item Disconnect the ignition leads from the rocket.
             \item Detatch the torsion springs from the disconnect mechanism.
-            \item Disarm the recovery electronics system using the magnetic switches.
-            \item Disarm the payload using the transponder.
             \item Disconnect the fill line from the supply cylinder.
             \item Replace the cap on the nitrous oxide supply cylinder.
         \end{checklist}
@@ -434,69 +433,5 @@ Launch Control & Launch Tower & Minimum Safe Distance \\
 \setcounter{checklistnum}{0}
 % end A5 section -- }}}
 
-% begin abort procedure gamma -- {{{
-\subsection{[A{\LARGE$\gamma$}] Abort Procedure - Voice Contact Loss - For Launch Control Operators}
-\begin{checklist}
-    \item \control{}: Remove the system control key from the client side box.
-    \item \ops{}: Attempt to regain communication with the operators at the pad:
-    \begin{checklist}
-        \item Send ``\ops{} to \secondary{}, \ops{} to \secondary{}, \secondary{} please come in''.
-        \begin{checklist}[label=$\bullet$]
-            \item If contact is restored:
-            \begin{checklist}
-                \item Return to normal operations.
-            \end{checklist}
-        \end{checklist}
-        \item Check batteries in radio.
-        \item Check that radio is set to the proper channel.
-        \item Check that radio volume is high enough.
-        \item Wait 30 seconds, then send message again.
-        \begin{checklist}[label=$\bullet$]
-            \item If contact is restored:
-            \begin{checklist}
-                \item Return to normal operations.
-            \end{checklist}
-        \end{checklist}
-    \end{checklist}
-    \item \ops: Wait 30 seconds.
-    \item \ops: Send ``\ops{} to \secondary{}, \ops{} to \secondary{}, going to full abort. Say again, going to full abort.''
-    \item \ops: Inform the ESRA official that launch operations will be aborted.
-    \item \ops: Wait for operators to return from pad.
-    \item \ops: Proceed with teardown and disassembly.
-\end{checklist}
-
-% add a page break, since the only piece of paper that the launch pad
-% operators should be carrying is this one abort procedure
-\newpage
-
-\subsection{[A{\LARGE$\gamma$}] Abort Procedure - Voice Contact Loss - For Launch Pad Operators}
-\begin{checklist}
-    \item \secondary{}: Attempt to regain communication with the operators at launch control:
-    \begin{checklist}
-        \item Send ``\secondary{} to \ops{}, \secondary{} to \ops{}, \ops{} please come in''.
-        \begin{checklist}[label=$\bullet$]
-            \item If contact is restored:
-            \begin{checklist}
-                \item Return to normal operations.
-            \end{checklist}
-        \end{checklist}
-        \item Check batteries in radio.
-        \item Check that radio is set to the proper channel.
-        \item Check that radio volume is high enough.
-        \item Wait 30 seconds, then send message again.
-        \begin{checklist}[label=$\bullet$]
-            \item If contact is restored:
-            \begin{checklist}
-                \item Return to normal operations.
-            \end{checklist}
-        \end{checklist}
-    \end{checklist}
-    \item \secondary{} and \primary{}: Approach the rocket, listening for hisses coming from fill system
-    \item \primary{}: Close the cylinder valve.
-    \item \primary{}: Slowly open the Parallel Vent Valve.
-    \item \primary{}: Slowly open the Parallel Fill Valve.
-    \item \secondary{} and \primary{}: Return to launch control.
-\end{checklist}
-% end abort procedure gamma -- }}}
 
 \end{document}
