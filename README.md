@@ -24,7 +24,7 @@ These are the recommended sections to include in your ops document, and the info
    
 2. Background Section
    
-   If the ops file contains multiple procedures (for exapmle, the setup procedures and the test procedures), this section should declare all of the procedures. This section should also contain a subsection for all of the personnel involved in the procedure, and what the position names and roles are. Please use position names (like "Primary Fill Operator") instead of the person's name, since the person running the test may change, and because I have no idea if these fall under GDPR, and I'd rather not risk including identifying information.
+   If the ops file contains multiple procedures (for example, the setup procedures and the test procedures), this section should declare all of the procedures. This section should also contain a subsection for all of the personnel involved in the procedure, and what the position names and roles are. Please use position names (like "Primary Fill Operator") instead of the person's name, since the person running the test may change, and because I have no idea if these fall under GDPR, and I'd rather not risk including identifying information.
    
    There should also be a sign-off section, in which each of the test personnel have a line to sign on to declare that they've read the procedure they're about to be carrying out. It's very easy for bugs to creep into checklists, and we want to catch those bugs as early as possible (ie, before we start running the procedure).
    
@@ -36,4 +36,4 @@ These are the recommended sections to include in your ops document, and the info
    
    For most tests, every item on a checklist is going to be read out over the radio. Please keep the items clear and concise.
    
-   If some instructions are conditional (for example, "if you see a leak, do the followin steps"), those instructions should be indented from the top level to make that clear.
+   If some instructions are conditional (for example, "if you see a leak, do the following steps"), those instructions should be indented from the top level to make that clear.
