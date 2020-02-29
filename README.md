@@ -10,7 +10,7 @@ After cloning this repository, you should be able to compile any of the `.tex` f
 
 If this command fails, please check your LaTeX install. You can download LaTeX [here](https://www.latex-project.org/get/).
 
-Most new ops start with the template file `standard_template.tex`. It's highly recommended that you copy this file into a new tex file and make edits there, instead of starting from an empty file.. This template follows the recommended ops structure, and includes examples of how to use the features of LaTeX (both the default ones, and the custom features written by our team).
+Most new ops start with the template file `standard_template.tex`. It's highly recommended that you copy this file into a new tex file and make edits there, instead of starting from an empty file. This template follows the recommended ops structure, and includes examples of how to use the features of LaTeX (both the default ones, and the custom features written by our team).
 
 ## Recommended Ops Structure/Guidelines
 
@@ -24,9 +24,9 @@ These are the recommended sections to include in your ops document, and the info
    
 2. Background Section
    
-   If the ops file contains multiple procedures (for example, the setup procedures and the test procedures), this section should declare all of the procedures. This section should also contain a subsection for all of the personnel involved in the procedure, and what the position names and roles are. Please use position names (like "Primary Fill Operator") instead of the person's name, since the person running the test may change, and because I have no idea if these fall under GDPR, and I'd rather not risk including identifying information.
+   If the ops file contains multiple procedures (for example, the setup procedures and the test procedures), this section should declare all of the procedures. This section should also contain a subsection for all of the personnel involved in the procedure, and what the position names and roles are. Please use position names (like "Primary Fill Operator") instead of the person's name, since the person running the test may change.
    
-   There should also be a sign-off section, in which each of the test personnel have a line to sign on to declare that they've read the procedure they're about to be carrying out. It's very easy for bugs to creep into checklists, and we want to catch those bugs as early as possible (ie, before we start running the procedure).
+   There should also be a sign-off section, in which each of the test personnel have a line to sign on to declare that they've read the procedure they're about to be carrying out. It's very easy for bugs to creep into checklists, and we want to catch those bugs as early as possible (i.e., before we start running the procedure).
    
 3. The Checklists
 
