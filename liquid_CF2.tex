@@ -1,0 +1,610 @@
+\input{common/standard_preamble}
+
+\title{
+\Huge "LAZEEZ"\\
+Cold Flow 2\\
+\vspace{1cm}
+\Large Cold Flow Test Operations Procedures}
+
+%begin operators definitions -- {{{
+\operator{ops}{Blue}{OPS}{Operations Director}
+\operator{primary}{Fuchsia}{PRIMARY}{Primary Fill Operator}
+\operator{secondary}{Emerald}{SECONDARY}{Secondary Fill Operator}
+\operator{daq}{OliveGreen}{DAQ}{DAQ Technician}
+\operator{control}{Maroon}{CONTROL}{Control System Operator}
+\operator{peri}{red}{P1}{Perimeter Guard 1}
+\operator{perii}{red}{P2}{Perimeter Guard 2}
+\operator{periii}{red}{P3}{Perimeter Guard 3}
+%end operators definitions -- }}}}}
+
+\begin{document}
+\input{common/standard_titlepage}
+
+\section{Cold Flow Test Operations Procedures}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following procedures:
+\begin{itemize}
+    \item The \textit{Pressurant Regulation Test} procedure comprises steps for determining the proper setting of the flow control valves.
+    \item The \textit{Fuel Flow Test} procedure comprises steps for conducting a flow test of the fuel components of the liquid engine.
+    \item The \textit{Oxidizer Flow Test} procedure comprises steps for conducting a flow test of the oxidizer components of the liquid engine. 
+    \item The \textit{Cold Flow Test} procedure comprises steps for conducting a cold flow test of the liquid engine, code name LAZEEZ, using manual actuation of valves. 
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin personnel required section -- {{{
+\subsection{Personnel Required}
+The test operations team consists of nine personnel:
+\begin{checklist}
+    \item The \opsfull{} directs operations procedures and communicates with the other test personnel.
+    \item The \primaryfull{} is the main system operator. \primary{} operates all manual valves. 
+    \item The \secondaryfull{} is the backup for \primary{}, and communicates with OPS. If \primary{} becomes incapacitated, \secondary{} is responsible for removing them from danger.
+    \item The \daqfull{} monitors and operates the test data acquisition system.
+    \item The \controlfull{} operates the test control system, including actuation of the injector valve. 
+    \item \perifull{}, \periifull{}, and \periiifull{} ensure that no unauthorized personnel enter the testing area during test operations.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end personnel required section -- }}}
+
+% begin background information section -- {{{
+\subsection{Background Information}
+All personnel should familiarize themselves with the following information prior to test start:
+\begin{itemize}
+    \item All valves have two names: an alphanumeric code used in the plumbing master system, and a descriptive name used in control system code and documentation. For this test, the correspondence is as follows:
+    \begin{itemize}
+    	\item \textbf{BA-1} is the \textbf{Supply Valve}
+	    \item \textbf{BA-2} is the \textbf{Supply Vent Valve}
+	    \item \textbf{BA-3} is the \textbf{Fuel Pressurant Valve}
+	    \item \textbf{BA-4} is the \textbf{Pressurant Vent Valve}
+	    \item \textbf{BA-5} is the \textbf{Oxidizer Pressurant Valve}
+	    \item \textbf{BA-6} is the \textbf{Oxidizer Vent Valve}
+	    \item \textbf{IJ-1} is the \textbf{Injector Valve}
+	    \item \textbf{SC} denotes a supply cylinder
+	    \item \textbf{R} denotes a regulator
+	\end{itemize}
+\end{itemize}
+% end background information section -- }}}
+
+% begin sign off -- {{{
+\subsection{Sign-Off}
+\textit{To be completed by all test personnel after reading and familiarization with procedures}
+\begin{checklist}
+    \item \opsfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \primaryfull  \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \secondaryfull\tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \daqfull      \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \perifull     \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \periifull    \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \periiifull   \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+    \item \controlfull  \tabto{25em}\rule{10em}{0.4pt}\hspace{5em}\rule{10em}{0.4pt}
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end sign off -- }}}
+
+\newpage
+% begin prior to start section -- {{{
+\subsection{Prior to Start}
+\begin{checklist}
+    \item Ensure that the following procedures are complete:
+    \begin{checklist}
+        \item Oxidizer Tank Assembly procedure
+        \item Plumbing Setup procedure
+        \item Oxidizer Tank Stand Setup procedure
+        \item Test Stand Setup procedure
+        \item Data Acquisition Setup procedure
+        \item RLCS Setup Procedure
+    \end{checklist}
+    \item Ensure that all technicians as defined above are available and have completed the sign-off.
+    \item Ensure that all spectators and test personnel are wearing safety glasses.
+    \item Ensure that \primary{} and \secondary{} are wearing face shields and have no exposed skin.
+    \item Ensure that \primary{} is wearing thermal gloves.
+    \item Ensure that the fuel tank \textbf{TK-2} has been filled with water. 
+    \item Ensure air compressor is on and full. 
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+\newpage
+%begin Pressurant Regulation Test Procedure section -- {{{
+\subsection{Pressurant Regulation Test Procedure}
+\begin{checklist}
+    \item \ops{}: Wrote down starting pressure: \rule{10em}{0.4pt}
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+		\item BA-1
+        \item BA-2
+        \item BA-6
+        \item BA-5
+		\item BA-3
+		\item BA-4
+		\item IJ-1
+    \end{checklist}
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \daq{}: Confirm that all load cells are reading the determined zero point.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \peri{}, \perii{}, and \periii{}: Close the perimeter and do not allow any further personnel to enter the testing area.
+    \item \secondary: Confirm that no personnel are present in the testing area other than \primary{} and \secondary.
+    \item \primary{}: Connect SC-2 using the quick connect fitting.
+    \item \primary{}: Connect SC-3 using the quick connect fitting.
+    \item \primary{}: Connect SC-4 using the quick connect fitting.
+     \item \primary{}: Slowly open SC-2 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-3 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-3.
+            \item \primary{}: Close SC-2.
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-4 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-4.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Communicate the pressure reading of PI-2. 
+    \item \daq{}: Communicate the pressure reading of PT-4.
+    \item \ops{}: Confirm that the pressure readings agree. 
+    \item If the readings do not agree:
+    \begin{checklist}
+            \item \primary{}: Close Sc-2.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-4. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Ensure that R-1 is at the minimum pressure by rotating the valve in the counter-clockwise direction.
+    \item \primary{}: Open BA-3.
+    \item \daq{}: Continuously communicate pressure readings from PT-3.
+    \item \primary{}: Slowly turn R-1 clockwise to increase the pressure. Stop when PI-3 reads \rule{5em}{0.4pt} psi.
+    \item \primary{}: Mark the location of the knob relative to the body and communicate the number of full rotations. 
+    \item \ops{}: Record the number of full rotations:\rule{10em}{0.4pt}
+    \item \primary{}: Close Sc-2.
+    \item \primary{}: Close SC-3.
+    \item \primary{}: Close SC-4. 
+    \item \primary{}: Slowly open BA-4.
+    \item \primary{}: Slowly open BA-5. 
+    \item \primary{}: Slowly open BA-6. 
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \primary{}: Disconnect SC-2 using the quick connect fitting.
+    \item \primary{}: Disconnect SC-3 using the quick connect fitting.
+    \item \primary{}: Disconnect SC-4 using the quick connect fitting.
+    \item \peri{}, \perii{}, and \periii{}: Open the perimeter.
+    \item \ops{}: Proceed with tear-down and disassembly.
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end Pressure Regulation Test Procedure section -- }}}
+
+\newpage
+% begin Fuel Flow Test Procedure section -- {{{
+\subsection{Fuel Flow Test Procedure}
+\begin{checklist}
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+		\item BA-1
+        \item BA-2
+        \item BA-6
+        \item BA-5
+		\item BA-3
+		\item BA-4
+		\item IJ-1
+    \end{checklist}
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \daq{}: Confirm that all load cells are reading the determined zero point.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \peri{}, \perii{}, and \periii{}: Close the perimeter and do not allow any further personnel to enter the testing area.
+    \item \secondary: Confirm that no personnel are present in the testing area other than \primary{} and \secondary.
+    \item \primary{}: Connect SC-2 using the quick connect fitting.
+    \item \primary{}: Connect SC-3 using the quick connect fitting.
+    \item \primary{}: Connect SC-4 using the quick connect fitting.
+    \item \primary{}: Slowly open SC-2 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-3 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-3.
+            \item \primary{}: Close SC-2.
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-4 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-4.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Communicate the pressure reading of PI-2.
+    \item \daq{}: Communicate the pressure reading of PT-4.
+    \item \ops{}: Confirm that the pressure readings agree. 
+    \item If the readings do not agree:
+    \begin{checklist}
+            \item \primary{}: Close Sc-2.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-4. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Open BA-3.
+    \item \daq{}: Confirm that PT-3 is reading \rule{5em}{0.4pt} psi.
+    \item \primary{} and \secondary{}: Retreat to mission control.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \control{}: Insert the key and engage control. 
+    \item \control{}: Conduct the fuel flow test by opening the injector valve.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \ops{}: Proceed when the graph steadies.
+    \item \control{}: Close the injector valve. 
+    \item \ops{}: Confirm mass of tank. If less than half of full value:
+    \begin{checklist}
+            \item \primary{}: Close SC-4.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-2.
+            \item \primary{}: Slowly open BA-4. 
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+            \item \ops{}: Restart the procedure. 
+    \end{checklist}
+   \item If over half:
+    \begin{checklist}
+            \item \primary{} and \secondary{}: Approach the plumbing. 
+            \item \primary{}: Slowly turn R-1 clockwise to increase the pressure. Stop when PI-3 reads \rule{5em}{0.4pt} psi higher.
+            \item \daq{}: Communicate the pressure reading of PT-3. 
+            \item \ops{}: Confirm the pressure readings are in agreement. 
+            \item \ops{}: Return to line 46. 
+    \end{checklist}
+    \item \control{}: Disengage control. 
+    \item \primary{}: Close SC-4.
+    \item \primary{}: Close SC-3.
+    \item \primary{}: Close SC-2.
+    \item \primary{}: Slowly open BA-4.
+    \item \primary{}: Open BA-5. 
+    \item \primary{}: Open BA-6. 
+    \item \primary{}: Disconnect SC-4.
+    \item \primary{}: Disconnect SC-3.
+    \item \primary{}: Disconnect SC-2.
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \peri{}, \perii{}, and \periii{}: Open the perimeter.
+    \item \ops{}: Proceed to the oxidizer flow test. 
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end Fuel Flow Test Procedure section -- }}}
+
+\newpage
+% begin Oxidizer Flow Test Procedure section -- {{{
+\subsection{Oxidizer Flow Test Procedure}
+\begin{checklist}
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+		\item BA-1
+        \item BA-2
+        \item BA-6
+        \item BA-5
+		\item BA-3
+		\item BA-4
+		\item IJ-1
+    \end{checklist}
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \daq{}: Confirm that all load cells are reading the determined zero point.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \peri{}, \perii{}, and \periii{}: Close the perimeter and do not allow any further personnel to enter the testing area.
+    \item \secondary: Confirm that no personnel are present in the testing area other than \primary{} and \secondary.
+    \item \primary{}: Connect SC-1 using the quick connect fitting.
+    \item \primary{}: Connect SC-2 using the quick connect fitting.
+    \item \primary{}: Connect SC-3 using the quick connect fitting.
+    \item \primary{}: Connect SC-4 using the quick connect fitting.
+    \item \primary{}: Slowly open SC-1 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close SC-1. 
+            \item \primary{}: Open BA-2. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Communicate the pressure reading of PI-1.
+    \item If the readings do not agree:
+    \begin{checklist}
+            \item \primary{}: Close SC-1. 
+            \item \primary{}: Open BA-2. 
+            \item \ops{}: Abort test procedures and revisit the test setup.
+    \end{checklist}
+    \item \primary{}: Slowly open SC-2 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-3 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-3.
+            \item \primary{}: Close SC-2.
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-4 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-4.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Communicate the pressure reading of PI-2. 
+    \item \daq{}: Communicate the pressure reading of PT-4.
+    \item \ops{}: Confirm that the pressure readings agree. 
+    \item If the readings do not agree:
+    \begin{checklist}
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \primary{}: Close Sc-2.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-4. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Open BA-6.
+    \item \daq{}: Communicate the tank mass.
+    \item \primary{}: Open BA-1 by 10 degrees.
+    \item \daq{}: Communicate when the desired mass is reached. 
+    \item \primary{}: Close BA-1. 
+    \item If the desired tank mass is surpassed:
+    \begin{checklist}
+            \item \daq{}: Continuously communicate tank mass readings. 
+            \item \ops{}: Continue when the desired tank mass is reached.
+    \end{checklist}
+    \item \primary{}: Close BA-6.
+    If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \primary{}: Close Sc-2.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-4. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Open BA-5.
+    \item \daq{}: Confirm that PT-2 is reading \rule{5em}{0.4pt} psi.
+    \item \primary{}: Start camera. 
+    \item \primary{} and \secondary{}: Retreat to mission control.
+    \item \textbf{PAUSE POINT}
+    \item \control{}: Insert the key and engage control. 
+    \item \control{}: Conduct the cold flow test by opening the injector valve.
+    \item \ops{}: Confirm mass of tank. If less than half of full value:
+    \begin{checklist}
+            \item \primary{}: Close SC-4.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-2.
+            \item \primary{}: Slowly open BA-6.
+            \item \primary{}: Slowly open BA-1 by 10 degrees.
+            \item \daq{}: Communicate when the desired mass is reached. 
+            \item \primary{}: Close BA-1.
+            \item \primary{}: Close BA-6.
+            \item \primary{}: Open BA-5.
+            \item \primary{}: Slowly turn R-1 clockwise to increase the pressure. Stop when PI-2 reads \rule{5em}{0.4pt} psi higher.
+            \item \daq{}: Communicate the pressure reading of PT-3. 
+            \item \ops{}: Confirm the pressure readings are in agreement. 
+            \item \ops{}: Return to line 46.
+    \end{checklist}
+   \item If over half:
+    \begin{checklist}
+            \item \primary{} and \secondary{}: Approach the plumbing.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Slowly turn R-1 clockwise to increase the pressure. Stop when PI-2 reads \rule{5em}{0.4pt} psi higher.
+            \item \daq{}: Communicate the pressure reading of PT-3. 
+            \item \ops{}: Confirm the pressure readings are in agreement. 
+            \item \ops{}: Return to line 46. 
+    \end{checklist}
+    \item \control{}: Disengage control. 
+    \item \primary{}: Close SC-4.
+    \item \primary{}: Close SC-3.
+    \item \primary{}: Close SC-2.
+    \item \primary{}: Close SC-1.
+    \item \primary{}: Open BA-2.
+    \item \primary{}: Open BA-1. 
+    \item \primary{}: Open BA-6.
+    \item \primary{}: Slowly open BA-4.
+    \item \primary{}: Open BA-5. 
+    \item \primary{}: Open BA-6. 
+    \item \primary{}: Disconnect SC-4.
+    \item \primary{}: Disconnect SC-3.
+    \item \primary{}: Disconnect SC-2.
+    \item \primary{}: Disconnect SC-1.
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \peri{}, \perii{}, and \periii{}: Open the perimeter.
+    \item \ops{}: Proceed with tear-down and disassembly.
+\end{checklist}
+% end Oxidizer Flow Test Procedure section -- }}}
+
+\newpage
+% begin Cold Flow Test Procedure section -- {{{
+\subsection{Cold Flow Test Procedure}
+\begin{checklist}
+    \item \primary{}: Confirm that the following valves are initially closed:
+    \begin{checklist}
+		\item BA-1
+        \item BA-2
+        \item BA-6
+        \item BA-5
+		\item BA-3
+		\item BA-4
+		\item IJ-1
+    \end{checklist}
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \daq{}: Confirm that all load cells are reading the determined zero point.
+    \item \textbf{\textit{PAUSE POINT}}
+    \item \peri{}, \perii{}, and \periii{}: Close the perimeter and do not allow any further personnel to enter the testing area.
+    \item \secondary: Confirm that no personnel are present in the testing area other than \primary{} and \secondary.
+    \item \primary{}: Connect SC-1 using the quick connect fitting.
+    \item \primary{}: Connect SC-2 using the quick connect fitting.
+    \item \primary{}: Connect SC-3 using the quick connect fitting.
+    \item \primary{}: Connect SC-4 using the quick connect fitting.
+    \item \primary{}: Slowly open SC-1 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close SC-1. 
+            \item \primary{}: Open BA-2. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Communicate the pressure reading of PI-1. 
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close SC-1. 
+            \item \primary{}: Open BA-2. 
+            \item \ops{}: Abort test procedures and revisit the test setup.
+    \end{checklist}
+    \item \primary{}: Slowly open SC-2 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-3 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-3.
+            \item \primary{}: Close SC-2.
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Slowly open SC-4 through $\frac{3}{4}$ of a turn.
+    \item If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close Sc-4.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-2. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Communicate the pressure reading of PI-2. 
+    \item \daq{}: Communicate the pressure reading of PT-4.
+    \item \ops{}: Confirm that the pressure readings agree. 
+    \item If the readings do not agree:
+    \begin{checklist}
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \primary{}: Close Sc-2.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-4. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup. 
+    \end{checklist}
+    \item \primary{}: Open BA-6.
+    \item \daq{}: Communicate the tank mass.
+    \item \primary{}: Open BA-1.
+    \item \daq{}: Communicate when the desired mass is reached. 
+    \item \primary{}: Close BA-1. 
+    \item If the desired tank mass is surpassed:
+    \begin{checklist}
+            \item \daq{}: Continuously communicate tank mass readings. 
+            \item \ops{}: Continue when the desired tank mass is reached.
+    \end{checklist}
+    \item \primary{}: Close BA-6.
+    If leaks are observed:
+    \begin{checklist}
+            \item \primary{}: Close SC-1.
+            \item \primary{}: Open BA-2.
+            \item \primary{}: Close Sc-2.
+            \item \primary{}: Close SC-3.
+            \item \primary{}: Close SC-4. 
+            \item \primary{}: Slowly open BA-4.
+            \item \primary{}: Open BA-5. 
+            \item \primary{}: Open BA-6. 
+            \item \ops{}: Abort test procedures and revisit the plumbing setup.
+    \end{checklist}
+    \item \primary{}: Open BA-5.
+    \item \primary{}: Open BA-3.
+    \item \daq{}: Confirm that PT-2 is reading \rule{10em}{0.4pt} psi.
+    \item \daq{}: Confirm that PT-3 is reading \rule{10em}{0.4pt} psi.
+    \item \primary{}: Start the camera. 
+    \item \primary{} and \secondary{}: Retreat to mission control.
+    \item \textbf{PAUSE POINT}
+    \item \control{}: Insert the key and engage control. 
+    \item \control{}: Conduct the cold flow test by opening the injector valve.
+    \item All observe the plume.
+    \item \control{}: Disengage control.
+    \item \primary{}: Close SC-4.
+    \item \primary{}: Close SC-3.
+    \item \primary{}: Close SC-2.
+    \item \primary{}: Close SC-1.
+    \item \primary{}: Open BA-2.
+    \item \primary{}: Open BA-1. 
+    \item \primary{}: Open BA-6.
+    \item \primary{}: Slowly open BA-4.
+    \item \primary{}: Disconnect SC-4.
+    \item \primary{}: Disconnect SC-3.
+    \item \primary{}: Disconnect SC-2.
+    \item \primary{}: Disconnect SC-1.
+    \item \daq{}: Confirm that all pressure transducers are reading atmospheric pressure.
+    \item \peri{}, \perii{}, and \periii{}: Open the perimeter.
+    \item \ops{}: Proceed with tear-down and disassembly.
+\end{checklist}
+% end Cold Flow Test Procedure section -- }}}
+
+\end{document}
