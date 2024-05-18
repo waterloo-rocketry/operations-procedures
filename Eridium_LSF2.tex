@@ -1,0 +1,746 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Waterloo Rocketry Standard template for operations procedures                 %
+% Copyright claimed by Aaron Morrison (akmorris@uwaterloo.ca)                   %
+% Any commercial entity wishing to use this template in any way must provide    %
+% to Waterloo Rocketry, one two-four (24 pack) of a non-shitty                  %
+% type of beer or an amount of Canadian dollars roughly equalling               %
+% the current cost of such a purchase. If you do so, then use it                %
+% however you want, and I claim in no way that it compiles properly,            %
+% and I take no responsibilty for any loss you incurr from using                %
+% this template, and make no promises to support you in any technical           %
+% capacity for sustained use.                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{common/standard_preamble}
+
+\title{
+\huge Eridium Liquid Rocket Engine\\ Static Fire 2\\ 
+\vspace{1cm}
+\large Static Fire Operations Procedure}
+
+
+
+\begin{document}
+
+
+
+\input{common/standard_titlepage}
+
+\section{Static Fire Test Operations Procedure}
+
+% begin operators declarations -- {{{
+% syntax for operator macro:
+% arg1: their name (so here you use \auth to insert the AUTHOR name)
+% arg2: the color you want them highlighted in
+% arg3: their abbreviated title (what you should use in the checklists)
+% arg4: their full title (insert into document with arg1 + full, so for auth
+%       it'd be "\authfull" to insert their full title). Use this in Personnel
+%       Required subsection, and in Sign Off subsection.
+\operator{ops}{YellowOrange}{OPS}{Operations Director}
+\operator{daq}{Cerulean}{DAQ}{Data Acquisition System Operator}
+\operator{rlcs}{blue}{CONTROL}{Control System Operator}
+\operator{primary}{ForestGreen}{PRIMARY}{Primary Operator}
+\operator{secondary}{violet}{SECONDARY}{Secondary Operator}
+\operator{emergency}{red}{EMERGENCY}{Emergency Services Caller}
+\operator{peri}{red}{P1}{Perimeter Guard 1}
+\operator{perii}{red}{P2}{Perimeter Guard 2}
+\operator{periii}{red}{P3}{Perimeter Guard 3}
+\operator{periv}{red}{P4}{Perimeter Guard 4}
+% end operators declarations -- }}}
+
+% begin valve declaration -- {{{
+% syntax for valve macro:
+% arg1: Abbreviated name (to save typing out the full callout every time)
+% arg2: Valve description
+% arg3: Valve P&ID tag
+\valve{oxfill}{Remote Oxidizer Fill Valve}{OV-101}
+\valve{oxdrain}{Remote Oxidizer Drain Valve}{OV-102}
+\valve{vent}{Oxidizer Tank Vent Valve}{OV-202}
+\valve{purge}{Nitrogen Purge Valve}{NV-101}
+\valve{moxfill}{Manual Oxidizer Fill Bypass Valve}{OMV-101}
+\valve{moxdrain}{Manual Oxidizer Drain Valve}{OMV-102}
+\valve{fiso}{Manual Fuel Tank Isolation Valve}{FMV-102}
+\valve{pdrain}{Manual Pneumatics Drain Valve}{NMV-101}
+\valve{fdrain}{Manual Fuel Dump Valve}{FMV-101}
+\valve{oxinj}{Oxidizer Injector Valve}{OV-301}
+\valve{finj}{Fuel Injector Valve}{FV-101}
+\valve{inj}{Injector Valve}{IJV-101}
+\valve{oxiso}{Oxidizer Tank Isolation Valve}{OV-201}
+\valve{ohshit}{Manual Oxidizer Tank Vent Valve}{OMV-201}
+% end valve declaration -- }}}
+
+% begin contents subsection -- {{{
+\subsection{Contents}
+This document contains the following four procedures:
+\begin{itemize}
+    \item The \textit{Fill System Leak Check Procedure} comprises steps for verifying the integrity of the system plumbing and proper operation of the data acquisition and test control systems, using nitrogen gas.
+    \item The \textit{Fill System Check Abort} comprises steps for aborting and safing the system in the event of an anomaly during the Fill System Check Procedure
+    \item The \textit{Static Fire Test Procedure} comprises steps for operating the fill system and conducting a static fire test of the engine.
+    \item The \textit{Static Fire Abort} comprises steps for aborting and safing the system in the event of an anomaly during the Static Fire Test procedure. 
+\end{itemize}
+% end contents subsection -- }}}
+
+% begin personnel required section -- {{{
+\subsection{Personnel Required}
+The test operations team consists of ten personnel:
+\begin{itemize}
+    \item The \opsfull{} directs operations and communicates with all other test personnel
+    \item The \primaryfull{} is the main system operator. \primary{} operates all manual valves on the fill and nitrogen pressurization system.
+    \item The \secondaryfull{} is the backup for \primary{}, and communicates with \ops{}. If \primary{} becomes incapacitated, \secondary{} is responsible for
+        removing them from danger.
+    \item The \rlcsfull{} operates the test control system, including actuating remote valves and engine ignition.
+    \item The \daqfull{} monitors and operates the data acquisition system.
+    \item \perifull{}, \periifull{}, \periiifull{} and \perivfull{} ensure no unauthorized personnel enter the testing area during test operations.
+    \item The \emergencyfull{} is responsible for calling 911 in the event of an emergency. 
+\end{itemize}
+\setcounter{checklistnum}{0}
+% end personnel required section -- }}}
+
+
+\subsection{General Notes}
+\begin{itemize}
+\item In the event of loss of radio contact, personnel should contact \ops{} by phone at 249-385-6237. 
+\item For \primary{} and \secondary{}, if contact with \ops{} cannot be re-established in 1 minute, close all cylinders and return to mission control.
+\item In the event of an emergency requiring 911 to be called, first responders should be directed to \ops{} before entering the site for a briefing on hazards.  
+\item Unless otherwise specified, any event failing to occur is grounds for abort. 
+\end{itemize}
+
+\newpage
+% begin sign off -- {{{
+\subsection{Sign-Off}
+\textit{To be completed by all test personnel after reading and familiarization with procedures}
+\begin{itemize}
+    \item \opsfull{}            \tabto{20em}\rule{20em}{0.4pt}
+    \item \primaryfull{}        \tabto{20em}\rule{20em}{0.4pt}
+    \item \secondaryfull{}      \tabto{20em}\rule{20em}{0.4pt}
+    \item \rlcsfull{}           \tabto{20em}\rule{20em}{0.4pt}
+    \item \daqfull{}            \tabto{20em}\rule{20em}{0.4pt}
+    \item \perifull{}           \tabto{20em}\rule{20em}{0.4pt}
+    \item \periifull{}          \tabto{20em}\rule{20em}{0.4pt}
+    \item \periiifull{}         \tabto{20em}\rule{20em}{0.4pt}
+    \item \perivfull{}          \tabto{20em}\rule{20em}{0.4pt} 
+    \item \emergencyfull{}      \tabto{20em}\rule{20em}{0.4pt}
+\end{itemize}
+\setcounter{checklistnum}{0}
+% end sign off -- }}}
+
+% begin prior to start section -- {{{
+\newpage
+\subsection{Prior to Fill System Leak Check Start}
+\begin{checklist}
+    \item Ensure the following items are complete before beginning the test procedure
+    \begin{checklist}
+        \item Injector assembly.
+        \item Concentric tank assembly, including pre-filling fuel tank with 3.75kg of ethanol.
+        \item Plumbing setup per Eridium LSF2 Leak Check P\&ID.
+        \item Data acquisition system setup.
+        \item Valve safe state checks.
+        \item RLCS power on, including:
+        \begin{checklist}
+        \item Both lipos installed.
+        \item Actuator and main switches flipped.
+        \item GSPD on and set to AC mode.
+        \end{checklist}
+        \item Perimeter sweep. 
+        \item Primary and secondary vent line checks.
+        \item Correct plumbing is connected to cylinders and caps are in place.
+        \item Generator filled with fuel and running. 
+        \item System control key inserted in towerside box.
+        \item Set all regulators to the minimum position. 
+        \item Ropes installed on all manual ball valves and tested. 
+        \item Place an appropriately sized container below \fdrain{} to collect ethanol \\ \phantom{} \hspace{8ex} in the event dumping is needed.
+        \item Low pressure leak check using nitrogen at approx. 100psi and soapy water. 
+        \item Ensure compressor is turned on and fully pressurized.
+        \item Ensure a spray bottle of soapy water is at the test stand.
+        \item Verify all valve ropes are fully unrolled. 
+        \item Ensure all personnel as defined above are available and have completed sign-off.
+        \item Ensure a blank copy of the procedure is available or a unique symbol will be used to cross off steps. 
+        \item Verify the lockout key is inserted into the towerside box.
+        \item Ensure the following personnel have walkie-talkies and that communication is functional:
+        \begin{checklist}
+            \item \ops{}
+            \item \secondary{}
+            \item \peri{}
+            \item \perii{}
+            \item \periii{}
+            \item \periv{}
+    \end{checklist}
+    \item Ensure \peri{}, \perii{}, \periii{}, and \periv{} are wearing hi-vis vests.
+    \item Ensure \primary{} and \secondary{} are wearing face shields and have no exposed skin.
+    \item Ensure \primary{} is wearing thermal gloves.
+    \item Remove propane cylinder from shipping container, if present.
+    \end{checklist}
+    
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end prior to start section -- }}}
+
+\subsection{Fill System Leak Check Procedure}
+\begin{checklist}
+    \item \primary{}: Open \fdrain{}. 
+    \item \primary{}: Fill ethanol through \fdrain{} until no more can be added. Be careful not to spill any ethanol. 
+    \item \primary{}: Close \fdrain{}.
+    \item \primary{}: Open \fiso{}.
+    \item \daq{}: Zero load cell. 
+    \item \daq{}: Begin Data logging. 
+    \item \daq{}: Confirm the zero points of all sensors have been recorded. 
+    \item \primary{}: Confirm the following valves are initially closed:
+    \begin{checklist}
+        \item \oxfill{}. 
+        \item \moxfill{}.
+        \item \oxdrain{}.
+        \item \moxdrain{}. 
+        \item \ohshit{}.
+        \item \purge{}.
+        \item \fdrain{}.
+        \item \pdrain{}.
+    \end{checklist}
+    \item \primary{}: Confirm the following valves are initially open:
+    \begin{checklist}
+        \item \fiso{}.
+        \item \oxiso{}.
+    \end{checklist}
+    \item \rlcs{}: Confirm the commanded state for the following valves is 'closed':
+    \begin{checklist}
+        \item \inj{}.
+    \end{checklist}
+    \item \rlcs{}: Confirm the commanded state for the following valves is 'open':
+    \begin{checklist}
+        \item \vent{}.
+    \end{checklist}
+    \item \daq{}: If state feedback is available, confirm the following valves are initially closed:
+    \begin{checklist}
+        \item \finj{}.
+        \item \oxinj{}.
+    \end{checklist}
+    \item \secondary{}: Confirm there are no personnel in the test exclusion zone except for \primary{} and \\ \phantom{} \hspace{3ex} \secondary{}.
+    \item \peri{}, \perii{}, \periii{}, \periv{}: Close the perimeter and do not allow any individuals to enter the test exclusion zone.
+    \item \primary{}: Remove covers from plumbing in the following locations:
+    \begin{checklist}
+        \item Oxidizer Fill Panel PRV (OPRV-101).
+        \item Oxidizer fill panel drain hose.
+        \item Oxidizer run tank PRV (OPRV-201).
+        \item Nitrogen Fill panel PRV (NPRV-101).
+        \item \vent{}.
+        \item \fdrain{}.
+        \item \pdrain{}
+    \end{checklist}
+    \item \primary{}: Slowly adjust compressor regulator NREG-201 until a pressure of approximately 145psi is read \\ \phantom{} \hspace{3ex} by the downstream gauge (NPG-202). 
+    \item \primary{}: Communicate final pneumatics pressure as read by NPG-201.
+    \item \daq{}: Confirm pressure reading on NPT-101 is in agreement. 
+    \item \primary{}: Slowly open nitrogen supply cylinder NSC-101.
+    \item \primary{}: Comunicate cylinder pressure as read by NPG-101.
+    \item \primary{}: Slowly adjust pneumatics regulator NREG-101 until a pressure of 750psi is read on the \\ \phantom{} \hspace{3ex} downstream gauge (NPG-102).
+    \item \daq{}: Confirm pressure reading on OPT-101 is in agreement. 
+    \item \primary{} and \secondary{}: Spray soapy water on all fittings.
+    \item \secondary{}: Remove lockout key from towerside box.
+    \item \primary{} and \secondary{}: Retreat to safe distance. 
+    \item \rlcs{}: Insert system control key into clientside box and engage control.
+    \item \rlcs{}: Close \vent{}.
+    \begin{checklist}[label=$\bullet$]
+        \item If \ventnum{} fails to close, close \oxiso.
+        \item If \oxisonum{} fails to close, proceed to the Fill System Leak Check Abort Procedure.
+    \end{checklist}
+    \item \rlcs{}: Open \oxfill{}. 
+    \begin{checklist}[label=$\bullet$]
+        \item If \oxfillnum{} fails to open proceed to the Fill System Leak Check Abort Procedure.
+    \end{checklist}
+    \item \daq{}: Communicate fuel and oxidizer tank pressure continuously as read by OPT-201 and FPT-101. 
+    \item \ops{}: Proceed when oxidizer tank pressure reaches pressure of 750psi.
+    \item \ops{}: Record pressure difference between OPT-201 and FPT-101. 
+    \item \rlcs{}: Close \oxfill{}.
+    \item \daq{}: Monitor oxidizer and fuel tank pressures. 
+     \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed, close \oxiso and determine if the leak rate slows. 
+        \item If leak rate does not slow after 5 minutes, proceed.
+    \end{checklist}
+    \item \rlcs{}: Open \vent{}.
+    \item \rlcs{}: Open \oxiso{} if closed. 
+    \item \rlcs{}: Open \oxdrain{}.
+    \item \ops{}: Proceed when oxidizer tank is fully vented. 
+    \item \rlcs{}: Disengage control and remove system control key from clientside box. 
+    \item \primary{} and \secondary{}: Return to the test stand. 
+    \item \secondary{}: Insert lockout key into towerside box. 
+    \item \primary{}: Inspect all plumbing for evidence of bubbles. Report findings to \ops{}.
+    \item \ops{}: If leaks were discovered that can be easily fixed, have \primary{} tighten the fittings and return to \\ \phantom{} \hspace{3ex} Line 39. 
+    \item \primary{}: Close Nitrogen supply cylinder NSC-101.
+    \item \primary{}: Set compressor regulator NREG-201 to minimum position. 
+    \item \primary{}: Slowly open \pdrain{}.
+    \item \secondary{}: Remove lockout key from towerside box. 
+    \item \primary{} and \secondary{}: Retreat to safe distance. 
+    \item \rlcs{}: Insert system control key into clientside box and engage control. 
+    \item \rlcs{}: Open \oxfill{}.
+    \item \daq{}: Confirm all sensors are reading their determined zero points. 
+    \item \rlcs{}: Disengage control and remove system control key from the clientside box.
+    \item \peri{}, \perii{}, \periii{}, and \periv{}: Open the perimeter. 
+    \item \daq{}: Stop DAQ logging and save data files. 
+    \item \primary{} and \secondary{}: Approach the test stand.  
+    \item \primary{}: Replace covers on plumbing in the following 7 locations:
+    \begin{checklist}
+        \item Oxidizer fill panel PRV (OPRV-101).
+        \item Oxidizer fill panel drain hose.
+        \item Oxidizer run tank PRV (OPRV-201).
+        \item Nitrogen Fill panel PRV (NPRV-101)
+        \item \vent{}.
+        \item \fdrain{}.
+        \item \pdrain{}
+    \end{checklist}    
+    \item \ops{}: If leaks were observed an not fixed, correct leaks and repeat procedure as needed. Once no leaks are \\ \phantom{} \hspace{3ex} present, proceed with final setup for Static Fire Test. 
+\end{checklist}
+\setcounter{checklistnum}{0}
+
+
+\newpage
+\subsection{Fill System Leak Check Abort Procedure}
+\begin{checklist}
+ \item \rlcs{}: Open \vent{} if not already open.
+ \begin{checklist}[label=$\bullet$]
+    \item If RLCS is not operational, have \primary{} open \moxdrain{} using the \\ \phantom{} \hspace{8ex} attached rope. 
+    \end{checklist}
+ \item \rlcs{}: Open \oxiso{} if not already open. 
+ \item \rlcs{}: Close \oxfill{} if not already closed. 
+ \item \rlcs{}: Open \oxdrain{}. 
+ \item \rlcs{}: Remove system control key and disengage control.
+ \item \ops{}: Proceed when oxidizer tank is fully vented. 
+ \item \primary{} and \secondary: Approach the test stand. 
+ \item \secondary{}: Insert lockout key into towerside box. 
+ \item \primary{}: Close nitrogen supply cylinder NSC-101. 
+ \item \primary{}: Turn off the air compressor.
+ \item \primary{}: Set the air compressor regulator to zero. 
+ \item \secondary{}: Remove lockout key from towerside box.
+ \item \primary{} and \secondary{}: Retreat to a safe distance. 
+ \item \rlcs{}: Insert system control key and engage control. 
+ \item \rlcs{}: Open \oxfill{}. 
+ \begin{checklist}[label=$\bullet$]
+    \item If RLCS is not operational, have \primary{} open \moxfill{} using \\ \phantom{} \hspace{8ex} the attached rope. 
+    \end{checklist}
+\item \rlcs{}: Open \purge{}. 
+\begin{checklist}[label=$\bullet$]
+    \item If RLCS is not operational, proceed. Nitrogen will be drained through \\ \phantom{} \hspace{8ex} \pdrain{}. 
+    \end{checklist}
+\item \rlcs{}: Disengage control and remove the system control key. 
+\item \daq{}: Confirm all sensors are reading their determined zero points. 
+\begin{checklist}[label=$\bullet$]
+    \item If DAQ is not operational, have \primary{} verify the gauges OPG-101, OPG-201 and NPG-101 are all \\ \phantom{} \hspace{8ex} reading zero. 
+    \end{checklist}
+\item \primary{}: Open \pdrain{}.
+\item \peri{}, \perii{}, \periii{}, and \periv{}: Open the perimeter.
+\item \ops{}: Abort and revisit the plumbing and controls setup. 
+\end{checklist}
+
+
+\newpage
+% begin first checklist-- {{{ 
+\subsection{Prior to Static Fire Test Start}
+% syntax for the flag macro:
+% arg1: The colour you want the flag to be
+% this should be useful for abort procedures that we need to put sticky notes on for irec judges to happy for
+% It prints the flag all the way over the right edge so the flag should be visible even in the middle of a stack of ops
+\begin{checklist}
+\item Ensure the following items are complete before beginning the test procedure
+    \begin{checklist}
+        \item Fill System Leak Check procedure complete.
+        \item Combustion chamber assembly.
+        \item Plumbing setup per Eridium LSF2 P\&ID. 
+        \item Data acquisition system setup.
+        \item Valve safe state checks.
+        \item RLCS power on, including:
+        \begin{checklist}
+        \item Both lipos installed.
+        \item Actuator and main switches flipped.
+        \item GSPD on and set to AC mode.
+        \end{checklist}
+        \item Perimeter sweep. 
+        \item Primary and secondary vent line checks.
+        \item Correct plumbing is connected to cylinders and caps are in place.
+        \item Tank heating jackets installed on oxidizer run tank and set to 60\textdegree C. 
+        \item Cameras in the correct positions and prepared to record. 
+        \item Generator filled with fuel and running. 
+        \item System control key inserted in towerside box.
+        \item Set all regulators to the minimum position. 
+        \item Ensure ropes are installed on manual ball valves and tested.
+        \item Place an appropriately sized container below \fdrain{} to collect ethanol \\ \phantom{} \hspace{8ex} in the event dumping is needed.
+        \item Ensure fuel tank is filled with 3.75kg of ethanol. 
+        \item Ensure all personnel as defined above are available and have completed sign-off.
+         \item Ensure a blank copy of the procedure is available or a unique symbol will be used to cross off steps. 
+         \item Verify lockout key is installed in towerside box. 
+         \item Verify ignition cables are disconnected from the towerside box.
+         \item Verify a multimeter is at the test tand.
+        \item Verify all valve ropes are fully unrolled. 
+        \item Ensure the following personnel have walkie-talkies and that communication is functional:
+        \begin{checklist}
+            \item \ops{}
+            \item \secondary{}
+            \item \peri{}
+            \item \perii{}
+            \item \periii{}
+            \item \periv{}
+        \end{checklist}
+        \item Ensure \peri{}, \perii{}, \periii{}, and \periv{} are wearing hi-vis vests.
+        \item Ensure \primary{} and \secondary{} are wearing face shields and have no exposed skin.
+        \item Ensure \primary{} is wearing thermal gloves.
+        \item Remove propane heater from shipping container, if present.
+    \end{checklist}
+      
+\end{checklist}
+\setcounter{checklistnum}{0}
+% end first checklist -- }}}
+
+\subsection{Static Fire Test Procedure}
+\begin{checklist}
+    \item \daq{}: Begin DAQ data logging. 
+    \item \secondary{}: Confirm that the ignition wire is not connected to the towerside control box.
+    \item \daq{}: Confirm the zero points of all sensors have been recorded. 
+    \item \primary{}: Confirm the following valves are initially closed:
+    \begin{checklist}
+        \item \oxfill{}. 
+        \item \moxfill{}.
+        \item \oxdrain{}.
+        \item \moxdrain{}.
+        \item \purge{}. 
+        \item \pdrain{}.
+        \item \ohshit{}.
+        \item \fdrain{}.
+    \end{checklist}
+    \item \primary{}: Confirm the following valves are initially open:
+    \begin{checklist}
+        \item \fiso{}.
+        \item \oxiso{}.
+    \end{checklist}
+    \item \rlcs{}: Confirm the commanded state for the following valves is 'closed':
+    \begin{checklist}
+        \item \inj{}.
+    \end{checklist}
+    \item \rlcs{}: Confirm the commanded state for the following valves is 'open':
+    \begin{checklist}
+        \item \vent{}. 
+    \end{checklist}
+    \item \daq{}: If state feedback is available, confirm the following valves are initially closed:
+    \begin{checklist}
+        \item \finj{}. 
+        \item \oxinj{}.
+    \end{checklist}
+    \item \primary{}: Confirm the resistance across the primary and secondary ignition cables is 2.0 +/- 0.5 ohms. 
+    \item \secondary{}: Confirm there are no personnel in the test exclusion zone except for \primary{} and \\ \phantom{} \hspace{3ex} \secondary{}.
+    \item \daq{}: Confirm all sensors are reading their determined zero points. 
+    \item \peri{}, \perii{}, \periii{}, \periv{}: Close the perimeter and do not allow any individuals to enter the test exclusion zone.
+    \item \primary{}: Confirm all covers are removed from the system. There should be 8 covers total, with covers \\ \phantom{} \hspace{3ex} in the following locations:
+    \begin{checklist}
+        \item Oxidizer fill panel PRV (OPRV-101).
+        \item Oxidizer fill panel drain hose.
+        \item Oxidizer run tank PRV (OPRV-201).
+        \item Nitrogen Fill Panel PRV (NPRV-101).
+        \item \vent{}.
+        \item \pdrain{}.
+        \item \fdrain{}.
+        \item Combustion chamber/nozzle.
+    \end{checklist}
+    \item \primary{}: Slowly open Nitrogen Supply Cylinder NSC-101. 
+    \item \primary{}: Communicate cylinder supply pressure as read by NPG-101. 
+    \item \primary{}: Slowly adjust pneumatics regulator NREG-101 until a pressure of 145psi is read on NPG-102.
+    \item \daq{}: Confirm the pressure reading on NPT-101 is 145psi. 
+    \item \primary{}: Slowly open the first Nitrous Oxide supply cylinder, OSC-101. 
+     \begin{checklist}[label=$\bullet$]
+        \item If leaks are observed proceed to the Static Fire Remote Abort Procedure. 
+    \end{checklist}
+    \item \primary{}: Slowly open the second Nitrous Oxide supply cylinder, OSC-102. 
+    \item \primary{}: Communicate the oxidizer supply pressure as read by gauge OPG-101.
+    \item \daq{}: Communicate the oxidizer supply pressure as read by OPT-101.
+    \item \ops{}: Confirm the two values are in agreement. 
+    \item \primary{}: Start recording on all manual cameras. 
+    \item \secondary{}: Connect the ignition wire to the towerside box. 
+    \item \secondary{}: Remove lockout key from towerside box. 
+    \item \primary{} and \secondary{}: Retreat to mission control. Bring the multimeter.  
+    \item \rlcs{}: Insert system control key into clientside box and engage control.
+    \item \rlcs{}: Open \oxdrain{}.
+    \item \rlcs{}: Open \purge{} to begin nitrogen purge of plumbing.
+    \item \ops{}: Proceed after 1 minute.
+    \item \rlcs{}: Close \oxdrain{}.
+    \item \rlcs{}: Close \purge{}.
+    \item \rlcs{}: Open \oxfill{}.
+    \begin{checklist}[label=$\bullet$]
+        \item If \oxfill{} fails to the Static Fire Remote Abort Procedure.
+    \end{checklist}
+    \item \daq{}: Continuously communicate oxidizer tank mass as read by oxidizer tank load cell. 
+    \item \ops{}: Proceed when tank mass has increased by 13.5 kg (+ 0.5kg, - 0 kg), or a plume is observed from  \\ \phantom{} \hspace{3ex} \vent{}. 
+    \begin{checklist}[label=$\bullet$]
+        \item If supply and oxidizer tank pressure equilibrate before target conditions are met proceed to the Static \\ \phantom{} \hspace{8ex} Fire Remote Abort Procedure.
+    \end{checklist}
+    \item \rlcs{}: Close \oxfill{}.
+    \begin{checklist}[label=$\bullet$]
+        \item If \oxfill{} fails to close proceed to the Static Fire Remote Abort Procedure.
+    \end{checklist}
+    \item \rlcs{}: Close \vent{}.
+    \begin{checklist}[label=$\bullet$]
+        \item If \ventnum{} fails to close, close \oxiso.
+        \item If \oxiso{} fails to close, proceed to the Static Fire Remote Abort \\ \phantom{} \hspace{8ex} Procedure.
+    \end{checklist}
+    \item \rlcs{}: Engage tank heating.
+    \item \daq{}: Communicate oxidizer tank pressure as read by OPT-201 in increments of 50psi.
+    \item \daq{}: Monitor all sensors and report any deviations or anomalies to \ops{} immediately. 
+    \item \ops{}: If oxidizer tank mass is decreasing or leaking from \vent{} is suspected, \\ \phantom{} \hspace{3ex} close \oxiso{}. 
+    \item \ops{}: If oxidizer tank mass drops below 12 kg proceed to the Static Fire abort procedure,
+    \item \ops{}: Proceed when the oxidizer tank pressure has reached 700psi. 
+    \item \ops{}: Ensure all spectators are wearing safety glasses and have earplugs in. 
+    \item \ops{}: Verify all remote cameras are recording. 
+    \item \ops{}: Instruct drone operator to launch. 
+    \item \ops{}: Proceed when the oxidizer tank pressure has reached firing pressure of 750psi.  
+    \item \rlcs{}: Disengage tank heating. 
+    \item \textbf{PAUSE POINT}
+    \item \ops{}: Verify all test commit criteria are met. 
+    \item \textbf{BEGIN RADIO SILENCE} - Note that in the event of an emergency or anomaly requiring immediate \\ \phantom{} \hspace{3ex} attention radio silence will be broken. 
+    \item \rlcs{}: Conduct the engine startup procedure. 
+        \begin{checklist}
+         \item Arm primary ignition.
+         \item  Hold down the fire button and continuously communicate ignition current. 
+         \item Proceed when either primary or secondary ignition current reads 0 amps, or when smoke is observed.
+         \begin{checklist}[label=$\bullet$]
+            \item In the event of a failed ignition (criteria  are not met within 1 minute) immediately release the \\ \phantom{} \hspace{12ex} ignition button and proceed to the Static Fire Remote Abort \\ \phantom{} \hspace{12ex} Procedure
+            \end{checklist}
+         \item Conduct the static fire test by opening \inj{}. 
+            \begin{checklist}[label=$\bullet$]
+            \item In the event \inj{} does not open proceed to the Static Fire Remote Abort \\ \phantom{} \hspace{12ex} Procedure.
+            \end{checklist}
+         \item \textbf{ALL}: Observe the plume.
+         \end{checklist}
+    \item \ops{}: Proceed when the static fire has concluded.
+    \item \daq{}: Verify DAQ systems are functional and all sensors are transmitting data. 
+    \item \ops{}: Confirm with remote camera operators that there is no visible fire on or around the test stand. 
+    \begin{checklist}[label=$\bullet$]
+            \item In the event fire is observed:
+             \begin{checklist}
+                \item \ops{}: If the fire is major or outside of the fill area, \textbf{call 911 immediately}.
+                \item \ops{}:  If fire is localized to the engine, proceed with nitrogen purge. Repeat as needed until the \\ \phantom{} \hspace{12ex} fire is extinguished. 
+                \item If a small fire is present in the fill area that cannot be extinguishers by a nitrogen purge, send  \\ \phantom{} \hspace{12ex} \primary{} and \secondary{} to use fire extinguishers. 
+                \end{checklist} 
+            \end{checklist}
+    \item \rlcs{}: Conduct a nitrogen purge by opening \purge{}. 
+    \item \rlcs{}: Close \purge{}. 
+    \item \rlcs{}: Close \inj{}. 
+    \item \textbf{END RADIO SILENCE}
+    \item \rlcs{}: Open \vent{}. 
+    \item \rlcs{}: Open \oxiso{} if closed. 
+    \item \rlcs{}: Disengage control and remove system control key.
+    \item \daq{}: Confirm CC temperature as read by CCTC-101, -102, -103, and/or -104 is below 100\textdegree C, unless \\ \phantom{} \hspace{3ex} suspected faulty. 
+    \item \primary{} and \secondary{}: Approach the test stand. 
+    \item \secondary{}: Insert lockout key into towerside box. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-101.
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-102. 
+    \item \primary{}: Close Nitrogen supply cylinder NSC-101.
+    \item \secondary{}: Remove lockout key from towerside box.
+    \item \primary{} and \secondary{}: Retreat to mission control. 
+    \item \rlcs{}: Insert system control key into clientside box and engage control. 
+    \item \rlcs{}: Open \oxdrain{}{}.
+    \item \rlcs{}: Open \oxfill{}{}.
+    \item \rlcs{}: Open \purge{}. 
+    \item \daq{}: Confirm all sensors are reading their determined zero points. 
+    \item \rlcs{}: Disengage control and remove system control key from the clientside box.
+    \item \daq{}: Stop DAQ logging and save data files. 
+    \item \primary{} and \secondary{}: Approach the test stand. 
+    \item \secondary{}: Insert lockout key into towerside box. 
+    \item \primary{}: Open \pdrain{}.
+    \item \peri{}, \perii{}, \periii{}, and \periv{}: Open the perimeter. 
+    \item \primary{}: Replace plumbing covers in the following 7 locations:
+    \begin{checklist}
+        \item Oxidizer fill panel PRV (OPRV-101).
+        \item Oxidizer fill panel drain hose.
+        \item Oxidizer run tank PRV (OPRV-201).
+        \item Nitrogen Panel PRV (NPRV-101)
+        \item \vent{}.
+        \item \fdrain{}.
+        \item \pdrain{}.
+    \end{checklist}
+    \item \daq{}: Continue to monitor CC temperature. Inform \ops{} immediately if temperature exceeds 100\textdegree C. 
+    \item \ops{}: Proceed with teardown. 
+\end{checklist}
+    
+\newpage
+\subsection{Static Fire Remote Abort Procedure}
+\begin{checklist}
+   \item \rlcs{}: Release the ignition button if pressed.
+    \item \daq{}: Verify DAQ is operational and receiving data. 
+    \begin{checklist}[label=$\bullet$]
+            \item If DAQ or RLCS is not operational, proceed to the Static Fire Manual Abort Procedure. 
+            \end{checklist}
+    \item \rlcs{}: Disengage tank heating. 
+    \item \rlcs{}: Open \vent{} if not already open. 
+    \item \rlcs{}: Open \oxiso{} if not already open. 
+    \item \rlcs{}: Close \oxfill{} if not already closed. 
+    \item \rlcs{}: Close \purge{} if not already closed. 
+    \item \rlcs{}: Open \oxdrain{}.
+    \item \ops{}: Proceed when the oxidizer tank is fully vented. 
+    \item \rlcs{}: Close \inj{} if not already closed.
+    \item \rlcs{}: Disengage control and remove the system control key. 
+    \item \primary{} and \secondary{}: Approach the test stand. 
+    \item \secondary{}: Insert lockout key into towerside box. 
+    \item \secondary{}: Disconnect the ignition wires from the towerside box. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-101. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-102. 
+    \item \primary{}: Close Nitrogen supply cylinder NSC-101. 
+    \item \secondary{}: Remove lockout key from towerside box.
+    \item \primary{} and \secondary{}: Retreat to a safe distance. 
+    \item \rlcs{}: Insert the system control key and engage control. 
+    \item \rlcs{}: Open \oxfill{}.
+    \item \rlcs{}: Open \purge{}. 
+    \item \daq{}: Verify all sensors are reading their determined zero point. 
+    \item \rlcs{}: Disengage control and remove system control key. 
+    \item \primary{} and \secondary{}: Approach the test stand. 
+    \item \primary{}: Open \pdrain{}. 
+    \begin{checklist}[label=$\bullet$]
+            \item If ethanol draining is required, have \primary{} place a bucket underneath the outlet hose from \\ \phantom{} \hspace{7ex} \fdrain{}, then open \fdrain{}. 
+    \end{checklist}
+    \item \peri{}, \perii{}, \periii{}, and \periv{}: Open the perimeter. 
+    \item \ops{}: Abort and revisit plumbing and controls setup.
+\end{checklist}
+
+\newpage
+\subsection{Static Fire Manual Abort Procedure}
+\begin{checklist}
+     \item \rlcs{} and \daq{}: Attempt to troubleshoot the issue. 
+      \begin{checklist}[label=$\bullet$]
+            \item If RLCS and DAQ become operational, have \primary{} and \secondary{} retreat and return to the \\ \phantom{} \hspace{7ex} Static Fire Remote Abort Procedure. 
+            \item If a connection issue is suspected send a DAQ technician with a laptop and walkie talkie to the manual \\ \phantom{} \hspace{7ex} valve pull ropes and attempt to connect to the local wifi. If successful, proceed with a remote abort. 
+    \end{checklist}
+    \item \primary{} and \secondary{}: Approach the manual valve ropes and listen for venting. 
+    \begin{checklist}[label=$\bullet$]
+            \item If venting is heard, report approximate source to \ops{}, and do not proceed until cleared \\ \phantom{} \hspace{7ex} by \ops{}.
+    \end{checklist}
+    \item \primary{}: Open \moxdrain{} using the attached rope. 
+    \begin{checklist}[label=$\bullet$]
+            \item If no venting is heard or \moxdrain{} fails to open, open \\ \phantom{} \hspace{7ex} \ohshit{}. 
+    \end{checklist}
+    \item \ops{}: Proceed when \primary{} and \secondary{} report no venting is heard.
+    \item \secondary{}: Insert lockout key into towerside box. 
+    \item \secondary{}: Disconnect the ignition wires from the towerside box. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-101. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-102. 
+    \item \primary{}: Close Nitrogen supply cylinder NSC-101. 
+    \item \primary{} and \secondary{}: Retreat to the manual valve ropes. 
+    \item \primary{}: Open \moxfill{}.  
+    \item \ops{}: Proceed when \primary{} and \secondary{} report no venting is heard.
+    \item \primary{}: Open \pdrain{}. 
+    \item \primary{}: Verify the following gauges read zero pressure:
+    \begin{checklist}[label=$\bullet$]
+        \item Oxidizer fill panel gauge OPG-101.
+        \item Nitrogen fill panel gauge NPG-101. 
+        \item Vent panel gauge OPG-201. 
+    \end{checklist}
+    \begin{checklist}[label=$\bullet$]
+            \item If ethanol draining is required, have \primary{} place a bucket underneath the outlet hose from \\ \phantom{} \hspace{7ex} \fdrain{}, then open \fdrain{}. 
+    \end{checklist}
+    \item \peri{}, \perii{}, \periii{}, and \periv{}: Open the perimeter. 
+    \item \ops{}: Abort and revisit plumbing and controls setup. 
+\end{checklist}
+
+
+\newpage
+\subsection{Static Fire Emergency Abort Procedure}
+\begin{checklist}
+    \item \rlcs{}: Release the ignition button if pressed. 
+    \item \rlcs{}: Open \oxdrain{}. 
+    \begin{checklist}[label=$\bullet$]
+            \item If DAQ or RLCS is not operational and it is safe to approach, have \primary{} open \\ \phantom{} \hspace{7ex} \moxdrain{} using the attached rope. 
+            \item If no venting occurs when \\ \phantom{} \hspace{7ex} \moxdrain{} is opened or \moxdrain{} fails to \\ \phantom{} \hspace{7ex} open, have \primary{} open \ohshit{} using the attached rope.
+            \item If is it not safe to approach the test site, call 911. 911 should be directed to \ops{} before approaching \\ \phantom{} \hspace{7ex} the site. 
+    \end{checklist}
+    \item \rlcs{}: Close \oxfill{} if not already closed. 
+    \item \rlcs{}: Open \vent{} if not already open. 
+    \item \rlcs{}: Open \oxiso{} if not already open.
+    \item \rlcs{}: Disengage tank heating.
+    \begin{checklist}[label=$\bullet$]
+            \item If DAQ or RLCS is not operational, have \primary{} turn off the generator.
+    \end{checklist}
+    \item \ops{}: Proceed when the oxidizer run tank is fully vented.
+    \item \rlcs{}: Close \inj{} if not already closed.
+    \item \rlcs{}: Remove system control key and disengage control. 
+    \item \primary{} and \secondary{}: Approach the test stand. 
+    \item \secondary{}: Insert the lockout key into the towerside box.
+    \item \secondary{}: Disconnect the ignition wires from the towerside box. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-101. 
+    \item \primary{}: Close Nitrous Oxide supply cylinder OSC-102. 
+    \item \primary{}: Close Nitrogen supply cylinder NSC-101. 
+    \item \secondary{}: Remove system control key from the towerside box.
+    \item \primary{} and \secondary{}: Retreat to a safe distance. 
+    \item \rlcs{}: Insert the system control key and engage control. 
+    \item \rlcs{}: Open \oxfill{}.
+    \item \rlcs{}: Open \purge{}. 
+    \item \daq{}: Verify all sensors are reading their determined zero point.
+        \begin{checklist}[label=$\bullet$]
+            \item If DAQ is not operational,\primary{} and \secondary{}. are not to approach the test stand if venting \\ \phantom{} \hspace{7ex} is heard.
+    \end{checklist}
+    \item \rlcs{}: Disengage control and remove system control key. 
+    \item \primary{} and \secondary{}: Approach the test stand. 
+    \item \primary{}: Open \pdrain{}. 
+    \begin{checklist}[label=$\bullet$]
+            \item If ethanol draining is required, have \primary{} place a bucket underneath the outlet hose from \\ \phantom{} \hspace{7ex} \fdrain{}, then open \fdrain{}. 
+    \end{checklist}
+    \item \peri{}, \perii{}, \periii{}, and \periv{}: Open the perimeter. 
+    \item \ops{}: Abort and revisit plumbing and controls setup. 
+\end{checklist}
+
+\newpage
+% begin Variable Recording section -- {{{
+\subsection{Variable Recording}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{ | m{15em} | m{15em}| m{15em} |} 
+    \hline
+    PT1 (Ox Fill) zero point &  & \\
+    \hline
+    PT2 (Ox Tank) zero point & &  \\
+    \hline
+    PT3 (Nitrogen Fill) zero point & &  \\
+    \hline
+    PT4 (Fuel Tank) zero point & &   \\
+    \hline
+    PT5 (Pneumatics) zero point & &   \\
+    \hline
+    PT6 (Ox injector) zero point &  &  \\
+    \hline
+    PT7 (Fuel injector) zero point & & \\
+    \hline
+    PT8 (CC) zero point & & \\
+    \hline
+    PT9 (CC) zero point & &\\
+    \hline
+    Ox tank load cell zero point &  & \\
+    \hline
+    Fuel tank load cell zero point & &\\
+    \hline
+    CC load cell zero point &  & \\
+    \hline
+    Pneumatic pressure &  & \\
+    \hline
+     &  & \\
+    \hline
+& &  \\
+    \hline
+
+       &  & \\
+    \hline
+       &  & \\
+    \hline
+       &   & \\
+    \hline
+       & &  \\
+    \hline
+       & &  \\
+    \hline
+       & &  \\
+    \hline
+       & &  \\
+    \hline
+       &  & \\
+    \hline
+       &  & \\
+    \hline
+       &  & \\
+    \hline
+       & &  \\
+    \hline
+       &  & \\
+    \hline
+
+\end{tabular}
+% end Variable Recording section }}}
+
+
+\end{document}
