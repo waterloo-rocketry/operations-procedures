@@ -77,6 +77,13 @@ itemindent=12em
 }
 % end personnel macro -- }}}
 
+% begin valve macro -- {{{
+\newcommand{\valve}[3]{%
+  \expandafter\newcommand\csname #1\endcsname{#2 (#3)}
+  \expandafter\newcommand\csname #1num\endcsname{#3}
+}
+% end valve macro --  }}}
+
 % begin flag macro -- {{{
 \newcommand\flag[1]{
     \hfill \makebox(0,0){\hspace{1.7in}\textcolor{#1}{\rule{0.3in}{0.5in}}}
