@@ -39,6 +39,15 @@
 \operator{perf}{olive}{PERFORMER}{Person Performing the Procedure}
 % end operators declarations -- }}}
 
+% begin valve declarations -- {{{
+% syntax for valve macro:
+% arg1: Abbreviated name (so you don't have to type as much to call out the valve)
+% arg2: Valve Description (Manaul/Remote, Working Fluid, and what is does)
+% arg3: Valve P&ID tag
+\valve{oxfill}{Remote Oxidizer Fill Valve}{OV-101}
+\valve{gigabort}{Manual Abort Valve}{OMV-420}
+% end valve declaration -- }}}
+
 % begin contents subsection -- {{{
 \subsection{Contents}
 This document contains the following:
@@ -50,7 +59,7 @@ This document contains the following:
 
 % begin personnel required section -- {{{
 \subsection{Personnel Required}
-The test operations team consists of seven personnel:
+The test operations team consists of A NUMBER personnel:
 \begin{checklist}
     \item The \authfull{} writes a new procedure
     \item The \edifull{} reads this new procedure and approves it before it is used
@@ -103,5 +112,69 @@ The test operations team consists of seven personnel:
 \end{checklist}
 \setcounter{checklistnum}{0}
 % end first checklist -- }}}
+
+\newpage
+% begin Variable Recording section -- {{{
+\subsection{Variable Recording}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{ | m{15em} | m{15em}| m{15em} |} 
+    \hline
+        &  & \\
+    \hline
+        & &  \\
+    \hline
+        & &  \\
+    \hline
+        & &   \\
+    \hline
+        & &   \\
+    \hline
+        &  &  \\
+    \hline
+         & & \\
+    \hline
+        & & \\
+    \hline
+        & &\\
+    \hline
+        &  & \\
+    \hline
+         & &\\
+    \hline
+         &  & \\
+    \hline
+          &  & \\
+    \hline
+         &  & \\
+    \hline
+        & &  \\
+    \hline
+       &  & \\
+    \hline
+       &  & \\
+    \hline
+       &   & \\
+    \hline
+       & &  \\
+    \hline
+       & &  \\
+    \hline
+       & &  \\
+    \hline
+       & &  \\
+    \hline
+       &  & \\
+    \hline
+       &  & \\
+    \hline
+       &  & \\
+    \hline
+       & &  \\
+    \hline
+       &  & \\
+    \hline
+
+\end{tabular}
+% end Variable Recording section }}}
 
 \end{document}
